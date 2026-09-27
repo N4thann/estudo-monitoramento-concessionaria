@@ -1,0 +1,30 @@
+@host = http://localhost:5010
+
+GET {{host}}/motos?pagina=1&tamanhoPagina=10&situacao=Disponivel
+
+###
+GET {{host}}/motos/resumo
+
+###
+POST {{host}}/motos
+Content-Type: application/json
+
+{ "marca": "Honda", "modelo": "Modelo", "ano": 2025, "cor": "Preto", "cilindrada": 160, "preco": 50000 }
+
+###
+POST {{host}}/vendas
+Content-Type: application/json
+
+{ "veiculoId": "<id>", "nomeCliente": "Maria Silva", "documentoCliente": "12345678909", "valor": 50000 }
+
+###
+GET {{host}}/vendas?de=2026-09-01&ate=2026-09-30
+
+###
+GET {{host}}/relatorios/vendas?de=2026-09-01&ate=2026-09-30
+
+###
+GET {{host}}/relatorios/estoque
+
+###
+GET {{host}}/saude

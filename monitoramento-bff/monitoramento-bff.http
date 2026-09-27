@@ -1,0 +1,25 @@
+@bff = http://localhost:5101/api
+
+GET {{bff}}/painel
+
+###
+GET {{bff}}/carros?pagina=1&tamanhoPagina=10&situacao=Disponivel&busca=toyota
+
+###
+POST {{bff}}/carros/vendas
+Content-Type: application/json
+X-Id-Operacao: teste-manual-001
+
+{ "veiculoId": "<id do carro>", "nomeCliente": "Maria Silva", "documentoCliente": "123.456.789-09", "valor": 135000 }
+
+###
+GET {{bff}}/motos?pagina=1&tamanhoPagina=10
+
+###
+GET {{bff}}/vendas?de=2026-09-01&ate=2026-09-30
+
+###
+GET {{bff}}/carros/relatorios/vendas?de=2026-09-01&ate=2026-09-30
+
+###
+GET {{bff}}/motos/relatorios/estoque

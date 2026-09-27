@@ -1,0 +1,15 @@
+@host = http://localhost:5051
+
+POST {{host}}/relatorios/indicadores/vendas
+Content-Type: application/json
+
+{ "vendas": [ { "veiculo": "Toyota Corolla 2023", "marca": "Toyota", "cliente": "Maria", "documento": "12345678909", "valor": 135000, "vendidaEm": "2026-09-27T12:00:00Z" } ] }
+
+###
+POST {{host}}/relatorios/planilhas/estoque
+Content-Type: application/json
+
+{ "tipoVeiculo": "Carros", "rotuloDetalhe": "Portas", "veiculos": [ { "marca": "Fiat", "modelo": "Mobi", "ano": 2023, "cor": "Laranja", "detalhe": "2", "preco": 59990, "cadastradoEm": "2026-09-27T12:00:00Z" } ] }
+
+###
+GET {{host}}/saude
