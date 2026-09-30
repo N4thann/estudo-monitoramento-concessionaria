@@ -30,6 +30,7 @@ public static class ExtensoesTelemetria
     public static WebApplicationBuilder AdicionarTelemetria(this WebApplicationBuilder builder, string nomeServico)
     {
         var configuracao = builder.Configuration.ObterConfiguracaoTelemetria();
+        Telemetria.CriarMedidorLimiteMemoria();
 
         builder.Services.AddOpenTelemetry()
             .ConfigureResource(recurso => recurso

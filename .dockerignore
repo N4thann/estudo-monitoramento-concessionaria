@@ -1,0 +1,12 @@
+**/bin/
+**/obj/
+**/logs/
+**/node_modules/
+**/dist/
+**/.vs/
+**/*.user
+**/.env
+.git/
+monitoramento-*.tests/
+observabilidade/
+cenarios/

@@ -38,6 +38,12 @@ public static class ExtensoesIntegracoes
                 // em cascata e mascararia o erro original com um timeout do BFF.
                 opcoes.Retry.ShouldHandle = argumentos => ValueTask.FromResult(
                     argumentos.Outcome.Exception is HttpRequestException or TimeoutRejectedException);
+                // O circuito também só abre por falha de transporte, ou seja, quando Carros/Motos está inalcançável. Com o
+                // padrão (que conta 5xx), os 502 das planilhas com Relatórios fora abriam o circuito para Carros inteiro,
+                // e rotas saudáveis (listagens, vendas, painel) passavam a responder 503: falha em cascata vista no
+                // cenário relatorios-fora.
+                opcoes.CircuitBreaker.ShouldHandle = argumentos => ValueTask.FromResult(
+                    argumentos.Outcome.Exception is HttpRequestException or TimeoutRejectedException);
                 // Sem retry em POST/PUT/DELETE: repetir uma venda que chegou a ser gravada geraria erro de "já vendido".
                 opcoes.Retry.DisableForUnsafeHttpMethods();
             });

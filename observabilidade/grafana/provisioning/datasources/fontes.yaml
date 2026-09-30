@@ -1,0 +1,60 @@
+apiVersion: 1
+
+# UIDs fixos para que dashboards e alertas provisionados em arquivo possam referenciar as fontes.
+datasources:
+  - name: Prometheus
+    type: prometheus
+    uid: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+    editable: false
+    jsonData:
+      timeInterval: 15s
+      # Exemplars das span metrics do Tempo levam direto ao trace.
+      exemplarTraceIdDestinations:
+        - name: traceID
+          datasourceUid: tempo
+
+  - name: Tempo
+    type: tempo
+    uid: tempo
+    access: proxy
+    url: http://tempo:3200
+    editable: false
+    jsonData:
+      serviceMap:
+        datasourceUid: prometheus
+      nodeGraph:
+        enabled: true
+      search:
+        hide: false
+      streamingEnabled:
+        search: true
+      # Trace → logs: mostra todos os logs das APIs que carregam o mesmo trace_id.
+      # Regex com ".*" na frente porque o Tempo às vezes devolve o id sem os zeros à esquerda, e o Loki guarda os 32 caracteres.
+      tracesToLogsV2:
+        datasourceUid: loki
+        spanStartTimeShift: "-5m"
+        spanEndTimeShift: "5m"
+        customQuery: true
+        query: '{service_namespace="concessionaria"} | trace_id=~".*$${__trace.traceId}"'
+      tracesToMetrics:
+        datasourceUid: prometheus
+
+  - name: Loki
+    type: loki
+    uid: loki
+    access: proxy
+    url: http://loki:3100
+    editable: false
+    jsonData:
+      maxLines: 1000
+      # Log → trace: o trace_id chega como metadado estruturado (não no texto da linha).
+      derivedFields:
+        - name: TraceId
+          matcherType: label
+          matcherRegex: trace_id
+          datasourceUid: tempo
+          url: "$${__value.raw}"
+          urlDisplayLabel: Ver trace no Tempo

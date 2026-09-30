@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: concessionaria
+    folder: Concessionária
+    type: file
+    # Editar pela interface é permitido, mas não persiste: a fonte de verdade é o JSON em arquivos/.
+    allowUiUpdates: false
+    updateIntervalSeconds: 10
+    options:
+      path: /etc/grafana/provisioning/dashboards/arquivos

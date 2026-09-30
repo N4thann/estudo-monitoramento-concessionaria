@@ -1,0 +1,1223 @@
+{
+    "Cenario":  "relatorios-fora",
+    "Parametros":  {
+                       "DuracaoFalhaSegundos":  150,
+                       "LatenciaMs":  4000,
+                       "CargaAlvo":  150,
+                       "Taxa":  5
+                   },
+    "Detalhe":  null,
+    "T0":  "2026-09-29T23:14:32.2113784+00:00",
+    "T1":  "2026-09-29T23:17:03.6036274+00:00",
+    "T2":  "2026-09-29T23:19:26.6349020+00:00",
+    "Alertas":  [
+                    {
+                        "Alerta":  "TaxaErro5xxAlta",
+                        "Alvo":  "motos",
+                        "Severidade":  "critica",
+                        "Descricao":  "14.21% das respostas de motos foram 5xx nos Ãºltimos 2 min (limite: 5%).",
+                        "Pendente":  "2026-09-29T23:15:26.4232825+00:00",
+                        "Disparou":  "2026-09-29T23:16:43.3886102+00:00",
+                        "Resolveu":  "2026-09-29T23:18:29.9912442+00:00"
+                    },
+                    {
+                        "Alerta":  "LatenciaP95Alta",
+                        "Alvo":  "motos",
+                        "Severidade":  "aviso",
+                        "Descricao":  "O p95 de motos estÃ¡ em 9.1s (limite: 500 ms).",
+                        "Pendente":  "2026-09-29T23:15:04.0170343+00:00",
+                        "Disparou":  "2026-09-29T23:16:23.1728800+00:00",
+                        "Resolveu":  "2026-09-29T23:17:19.1708841+00:00"
+                    },
+                    {
+                        "Alerta":  "FalhaIntegracaoRelatorios",
+                        "Alvo":  "motos / planilha_estoque",
+                        "Severidade":  "aviso",
+                        "Descricao":  "1.143 chamada(s) de motos a RelatÃ³rios falharam nos Ãºltimos 2 min, mesmo apÃ³s os retries.",
+                        "Pendente":  "2026-09-29T23:14:54.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:15:13.3855728+00:00",
+                        "Resolveu":  "2026-09-29T23:19:24.6146422+00:00"
+                    },
+                    {
+                        "Alerta":  "FalhaIntegracaoRelatorios",
+                        "Alvo":  "carros / planilha_estoque",
+                        "Severidade":  "aviso",
+                        "Descricao":  "1.143 chamada(s) de carros a RelatÃ³rios falharam nos Ãºltimos 2 min, mesmo apÃ³s os retries.",
+                        "Pendente":  "2026-09-29T23:14:54.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:15:13.3819161+00:00",
+                        "Resolveu":  "2026-09-29T23:19:24.6157137+00:00"
+                    },
+                    {
+                        "Alerta":  "FalhaIntegracaoRelatorios",
+                        "Alvo":  "carros / indicadores",
+                        "Severidade":  "aviso",
+                        "Descricao":  "4.572 chamada(s) de carros a RelatÃ³rios falharam nos Ãºltimos 2 min, mesmo apÃ³s os retries.",
+                        "Pendente":  "2026-09-29T23:14:54.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:15:13.3845328+00:00",
+                        "Resolveu":  "2026-09-29T23:19:24.6167914+00:00"
+                    },
+                    {
+                        "Alerta":  "FalhaIntegracaoRelatorios",
+                        "Alvo":  "carros / planilha_vendas",
+                        "Severidade":  "aviso",
+                        "Descricao":  "1.143 chamada(s) de carros a RelatÃ³rios falharam nos Ãºltimos 2 min, mesmo apÃ³s os retries.",
+                        "Pendente":  "2026-09-29T23:15:09.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:15:28.5469974+00:00",
+                        "Resolveu":  "2026-09-29T23:19:24.6178526+00:00"
+                    },
+                    {
+                        "Alerta":  "FalhaIntegracaoRelatorios",
+                        "Alvo":  "motos / planilha_vendas",
+                        "Severidade":  "aviso",
+                        "Descricao":  "5.714 chamada(s) de motos a RelatÃ³rios falharam nos Ãºltimos 2 min, mesmo apÃ³s os retries.",
+                        "Pendente":  "2026-09-29T23:15:09.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:15:28.5480360+00:00",
+                        "Resolveu":  "2026-09-29T23:19:24.6189066+00:00"
+                    },
+                    {
+                        "Alerta":  "FalhaIntegracaoRelatorios",
+                        "Alvo":  "motos / indicadores",
+                        "Severidade":  "aviso",
+                        "Descricao":  "25.14 chamada(s) de motos a RelatÃ³rios falharam nos Ãºltimos 2 min, mesmo apÃ³s os retries.",
+                        "Pendente":  "2026-09-29T23:15:09.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:15:28.5496002+00:00",
+                        "Resolveu":  "2026-09-29T23:19:24.6204864+00:00"
+                    },
+                    {
+                        "Alerta":  "PainelDegradado",
+                        "Alvo":  "",
+                        "Severidade":  "aviso",
+                        "Descricao":  "17.14 resposta(s) do /api/painel saÃ­ram sem indicadores nos Ãºltimos 2 min (RelatÃ³rios indisponÃ­vel).",
+                        "Pendente":  "2026-09-29T23:14:54.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:15:13.3881843+00:00",
+                        "Resolveu":  "2026-09-29T23:19:24.6215375+00:00"
+                    },
+                    {
+                        "Alerta":  "TaxaErro5xxAlta",
+                        "Alvo":  "bff",
+                        "Severidade":  "critica",
+                        "Descricao":  "19.96% das respostas de bff foram 5xx nos Ãºltimos 2 min (limite: 5%).",
+                        "Pendente":  "2026-09-29T23:15:11.4232825+00:00",
+                        "Disparou":  "2026-09-29T23:16:28.2370885+00:00",
+                        "Resolveu":  "2026-09-29T23:18:59.3371143+00:00"
+                    },
+                    {
+                        "Alerta":  "RetriesFrequentes",
+                        "Alvo":  "motos / relatorios-standard",
+                        "Severidade":  "aviso",
+                        "Descricao":  "17.14 retries nos Ãºltimos 2 min: a dependÃªncia estÃ¡ instÃ¡vel, mesmo que as requisiÃ§Ãµes ainda funcionem.",
+                        "Pendente":  "2026-09-29T23:14:54.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:15:13.3903111+00:00",
+                        "Resolveu":  "2026-09-29T23:18:09.7498984+00:00"
+                    },
+                    {
+                        "Alerta":  "RetriesFrequentes",
+                        "Alvo":  "carros / relatorios-standard",
+                        "Severidade":  "aviso",
+                        "Descricao":  "26.29 retries nos Ãºltimos 2 min: a dependÃªncia estÃ¡ instÃ¡vel, mesmo que as requisiÃ§Ãµes ainda funcionem.",
+                        "Pendente":  "2026-09-29T23:14:54.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:15:13.3924076+00:00",
+                        "Resolveu":  "2026-09-29T23:18:09.7514781+00:00"
+                    },
+                    {
+                        "Alerta":  "LatenciaP95Alta",
+                        "Alvo":  "bff",
+                        "Severidade":  "aviso",
+                        "Descricao":  "O p95 de bff estÃ¡ em 8.81s (limite: 500 ms).",
+                        "Pendente":  "2026-09-29T23:15:04.0170343+00:00",
+                        "Disparou":  "2026-09-29T23:16:23.1712944+00:00",
+                        "Resolveu":  "2026-09-29T23:17:34.3422093+00:00"
+                    },
+                    {
+                        "Alerta":  "LatenciaP95Alta",
+                        "Alvo":  "carros",
+                        "Severidade":  "aviso",
+                        "Descricao":  "O p95 de carros estÃ¡ em 8.952s (limite: 500 ms).",
+                        "Pendente":  "2026-09-29T23:15:04.0170343+00:00",
+                        "Disparou":  "2026-09-29T23:16:23.1696535+00:00",
+                        "Resolveu":  "2026-09-29T23:17:19.1739921+00:00"
+                    },
+                    {
+                        "Alerta":  "TaxaErro5xxAlta",
+                        "Alvo":  "carros",
+                        "Severidade":  "critica",
+                        "Descricao":  "19.46% das respostas de carros foram 5xx nos Ãºltimos 2 min (limite: 5%).",
+                        "Pendente":  "2026-09-29T23:15:26.4232825+00:00",
+                        "Disparou":  "2026-09-29T23:16:43.3864774+00:00",
+                        "Resolveu":  "2026-09-29T23:18:59.3381719+00:00"
+                    },
+                    {
+                        "Alerta":  "ServicoFora",
+                        "Alvo":  "relatorios",
+                        "Severidade":  "critica",
+                        "Descricao":  "O Prometheus nÃ£o consegue ler o /metrics de relatorios (host.docker.internal:5051) hÃ¡ mais de 30 s.",
+                        "Pendente":  "2026-09-29T23:14:41.4232825+00:00",
+                        "Disparou":  "2026-09-29T23:15:28.5437531+00:00",
+                        "Resolveu":  "2026-09-29T23:17:44.4572662+00:00"
+                    }
+                ],
+    "Sondas":  [
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-1",
+                       "Inicio":  "2026-09-29T23:14:32.8221894+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8145
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-2",
+                       "Inicio":  "2026-09-29T23:14:32.8293065+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8141
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-3",
+                       "Inicio":  "2026-09-29T23:14:37.9185346+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8102
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-4",
+                       "Inicio":  "2026-09-29T23:14:37.9195356+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8102
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-5",
+                       "Inicio":  "2026-09-29T23:14:42.9972614+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8085
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-6",
+                       "Inicio":  "2026-09-29T23:14:42.9976290+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8086
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-7",
+                       "Inicio":  "2026-09-29T23:14:48.0422842+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8093
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-8",
+                       "Inicio":  "2026-09-29T23:14:48.0432902+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8093
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-9",
+                       "Inicio":  "2026-09-29T23:14:53.1011522+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8128
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-10",
+                       "Inicio":  "2026-09-29T23:14:53.1014707+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8128
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-12",
+                       "Inicio":  "2026-09-29T23:14:58.1615724+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  5089
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-14",
+                       "Inicio":  "2026-09-29T23:15:03.2478832+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1014
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-11",
+                       "Inicio":  "2026-09-29T23:14:58.1605739+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8137
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-13",
+                       "Inicio":  "2026-09-29T23:15:03.2471098+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  5069
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-15",
+                       "Inicio":  "2026-09-29T23:15:08.3127295+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  1014
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-16",
+                       "Inicio":  "2026-09-29T23:15:08.3137394+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1013
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-17",
+                       "Inicio":  "2026-09-29T23:15:13.3737003+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  19
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-18",
+                       "Inicio":  "2026-09-29T23:15:13.3747089+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  5068
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-19",
+                       "Inicio":  "2026-09-29T23:15:18.4367886+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-20",
+                       "Inicio":  "2026-09-29T23:15:18.4377887+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1010
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-21",
+                       "Inicio":  "2026-09-29T23:15:23.4884737+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  1008
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-22",
+                       "Inicio":  "2026-09-29T23:15:23.4894443+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1008
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-23",
+                       "Inicio":  "2026-09-29T23:15:28.5411150+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  10
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-24",
+                       "Inicio":  "2026-09-29T23:15:28.5411150+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  10
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-25",
+                       "Inicio":  "2026-09-29T23:15:33.6135576+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-26",
+                       "Inicio":  "2026-09-29T23:15:33.6140853+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-27",
+                       "Inicio":  "2026-09-29T23:15:38.6594671+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  1010
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-28",
+                       "Inicio":  "2026-09-29T23:15:38.6600059+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  5060
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-29",
+                       "Inicio":  "2026-09-29T23:15:43.7110773+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  9
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-30",
+                       "Inicio":  "2026-09-29T23:15:43.7110773+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  9
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-31",
+                       "Inicio":  "2026-09-29T23:15:48.7726008+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  7
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-32",
+                       "Inicio":  "2026-09-29T23:15:48.7726008+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  7
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-33",
+                       "Inicio":  "2026-09-29T23:15:52.8143748+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  6
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-34",
+                       "Inicio":  "2026-09-29T23:15:52.8149050+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  6
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-35",
+                       "Inicio":  "2026-09-29T23:15:57.8846937+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  6
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-36",
+                       "Inicio":  "2026-09-29T23:15:57.8850711+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  6
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-37",
+                       "Inicio":  "2026-09-29T23:16:02.9425243+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  1010
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-38",
+                       "Inicio":  "2026-09-29T23:16:02.9431449+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1010
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-40",
+                       "Inicio":  "2026-09-29T23:16:07.9925594+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  5
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-39",
+                       "Inicio":  "2026-09-29T23:16:07.9922332+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  5065
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-41",
+                       "Inicio":  "2026-09-29T23:16:13.0508920+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  7
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-42",
+                       "Inicio":  "2026-09-29T23:16:13.0518923+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  6
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-43",
+                       "Inicio":  "2026-09-29T23:16:18.1127262+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  7
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-44",
+                       "Inicio":  "2026-09-29T23:16:18.1132386+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  6
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-45",
+                       "Inicio":  "2026-09-29T23:16:23.1658925+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  9
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-46",
+                       "Inicio":  "2026-09-29T23:16:23.1665167+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-48",
+                       "Inicio":  "2026-09-29T23:16:28.2345389+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  6
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-47",
+                       "Inicio":  "2026-09-29T23:16:28.2341567+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  1010
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-49",
+                       "Inicio":  "2026-09-29T23:16:33.2889850+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  1013
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-50",
+                       "Inicio":  "2026-09-29T23:16:33.2894013+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-51",
+                       "Inicio":  "2026-09-29T23:16:38.3462374+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  1008
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-53",
+                       "Inicio":  "2026-09-29T23:16:43.3835259+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  9
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-54",
+                       "Inicio":  "2026-09-29T23:16:43.3839845+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-52",
+                       "Inicio":  "2026-09-29T23:16:38.3467008+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  6047
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-55",
+                       "Inicio":  "2026-09-29T23:16:48.4362290+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  7
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-56",
+                       "Inicio":  "2026-09-29T23:16:48.4372280+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  6
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-57",
+                       "Inicio":  "2026-09-29T23:16:53.4976825+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  7
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-58",
+                       "Inicio":  "2026-09-29T23:16:53.4980032+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  7
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-59",
+                       "Inicio":  "2026-09-29T23:16:58.5562144+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  1010
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-60",
+                       "Inicio":  "2026-09-29T23:16:58.5571923+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1009
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-61",
+                       "Inicio":  "2026-09-29T23:17:03.9759804+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  23
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-62",
+                       "Inicio":  "2026-09-29T23:17:03.9765493+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  22
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-63",
+                       "Inicio":  "2026-09-29T23:17:09.0414537+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  11
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-64",
+                       "Inicio":  "2026-09-29T23:17:09.0422024+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  10
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-65",
+                       "Inicio":  "2026-09-29T23:17:14.1105451+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  7
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-66",
+                       "Inicio":  "2026-09-29T23:17:14.1110301+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1009
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-67",
+                       "Inicio":  "2026-09-29T23:17:19.1627884+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  14
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-68",
+                       "Inicio":  "2026-09-29T23:17:19.1637861+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1026
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-69",
+                       "Inicio":  "2026-09-29T23:17:24.2212034+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  7
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-70",
+                       "Inicio":  "2026-09-29T23:17:24.2212034+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1007
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-71",
+                       "Inicio":  "2026-09-29T23:17:29.2779758+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1007
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-72",
+                       "Inicio":  "2026-09-29T23:17:29.2789673+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1007
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-73",
+                       "Inicio":  "2026-09-29T23:17:34.3358678+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  9
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-74",
+                       "Inicio":  "2026-09-29T23:17:34.3368534+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1015
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-75",
+                       "Inicio":  "2026-09-29T23:17:39.3999519+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1006
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-76",
+                       "Inicio":  "2026-09-29T23:17:39.4004874+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1006
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-77",
+                       "Inicio":  "2026-09-29T23:17:44.4513304+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  8
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-78",
+                       "Inicio":  "2026-09-29T23:17:44.4521013+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1009
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-79",
+                       "Inicio":  "2026-09-29T23:17:49.5142940+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-80",
+                       "Inicio":  "2026-09-29T23:17:49.5152928+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-81",
+                       "Inicio":  "2026-09-29T23:17:54.5732832+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1009
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-82",
+                       "Inicio":  "2026-09-29T23:17:54.5742801+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1008
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-83",
+                       "Inicio":  "2026-09-29T23:17:59.6256790+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-84",
+                       "Inicio":  "2026-09-29T23:17:59.6266065+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-85",
+                       "Inicio":  "2026-09-29T23:18:04.6838032+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  7
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-86",
+                       "Inicio":  "2026-09-29T23:18:04.6848047+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-87",
+                       "Inicio":  "2026-09-29T23:18:09.7428023+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  11
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-88",
+                       "Inicio":  "2026-09-29T23:18:09.7433165+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  10
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-89",
+                       "Inicio":  "2026-09-29T23:18:14.8149139+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1015
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-90",
+                       "Inicio":  "2026-09-29T23:18:14.8154531+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1014
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-91",
+                       "Inicio":  "2026-09-29T23:18:19.8697564+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-92",
+                       "Inicio":  "2026-09-29T23:18:19.8700863+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-93",
+                       "Inicio":  "2026-09-29T23:18:24.9262857+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  8
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-94",
+                       "Inicio":  "2026-09-29T23:18:24.9272912+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-95",
+                       "Inicio":  "2026-09-29T23:18:29.9863770+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  8
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-96",
+                       "Inicio":  "2026-09-29T23:18:29.9876800+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-97",
+                       "Inicio":  "2026-09-29T23:18:34.0311755+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1010
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-98",
+                       "Inicio":  "2026-09-29T23:18:34.0316107+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-99",
+                       "Inicio":  "2026-09-29T23:18:39.0854808+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  9
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-100",
+                       "Inicio":  "2026-09-29T23:18:39.0864808+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  8
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-101",
+                       "Inicio":  "2026-09-29T23:18:44.1576919+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1014
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-102",
+                       "Inicio":  "2026-09-29T23:18:44.1583478+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1014
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-103",
+                       "Inicio":  "2026-09-29T23:18:49.2179387+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1007
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-104",
+                       "Inicio":  "2026-09-29T23:18:49.2182966+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1007
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-105",
+                       "Inicio":  "2026-09-29T23:18:54.2709057+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1014
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-106",
+                       "Inicio":  "2026-09-29T23:18:54.2717305+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1013
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-107",
+                       "Inicio":  "2026-09-29T23:18:59.3301238+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  10
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-108",
+                       "Inicio":  "2026-09-29T23:18:59.3309548+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  10
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-109",
+                       "Inicio":  "2026-09-29T23:19:04.4036996+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1009
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-110",
+                       "Inicio":  "2026-09-29T23:19:04.4042257+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1008
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-111",
+                       "Inicio":  "2026-09-29T23:19:09.4623628+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-112",
+                       "Inicio":  "2026-09-29T23:19:09.4628949+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-113",
+                       "Inicio":  "2026-09-29T23:19:14.5240766+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  7
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-114",
+                       "Inicio":  "2026-09-29T23:19:14.5244875+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1015
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-115",
+                       "Inicio":  "2026-09-29T23:19:19.5771965+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  5
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-116",
+                       "Inicio":  "2026-09-29T23:19:19.5777088+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1008
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-fora-painel-117",
+                       "Inicio":  "2026-09-29T23:19:24.6115959+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  2023
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-fora-planilha-118",
+                       "Inicio":  "2026-09-29T23:19:24.6125988+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  2022
+                   }
+               ]
+}

@@ -1,0 +1,1106 @@
+{
+    "Cenario":  "carga-alta",
+    "Parametros":  {
+                       "DuracaoFalhaSegundos":  270,
+                       "LatenciaMs":  4000,
+                       "CargaAlvo":  350,
+                       "Taxa":  5
+                   },
+    "Detalhe":  null,
+    "T0":  "2026-09-29T23:50:59.0902887+00:00",
+    "T1":  "2026-09-29T23:55:29.7779343+00:00",
+    "T2":  "2026-09-29T23:55:52.2451818+00:00",
+    "Alertas":  [
+                    {
+                        "Alerta":  "CpuAlta",
+                        "Alvo":  "relatorios",
+                        "Severidade":  "aviso",
+                        "Descricao":  "O processo de relatorios está usando 82.48% da CPU disponível.",
+                        "Pendente":  "2026-09-29T23:53:04.0170343+00:00",
+                        "Disparou":  "2026-09-29T23:55:19.7313474+00:00",
+                        "Resolveu":  "2026-09-29T23:55:50.2257021+00:00"
+                    },
+                    {
+                        "Alerta":  "CpuAlta",
+                        "Alvo":  "carros",
+                        "Severidade":  "aviso",
+                        "Descricao":  "O processo de carros está usando 81.53% da CPU disponível.",
+                        "Pendente":  "2026-09-29T23:52:49.0170343+00:00",
+                        "Disparou":  null,
+                        "Resolveu":  "2026-09-29T23:54:49.8689201+00:00"
+                    },
+                    {
+                        "Alerta":  "CpuAlta",
+                        "Alvo":  "motos",
+                        "Severidade":  "aviso",
+                        "Descricao":  "O processo de motos está usando 82.94% da CPU disponível.",
+                        "Pendente":  "2026-09-29T23:53:19.0170343+00:00",
+                        "Disparou":  null,
+                        "Resolveu":  "2026-09-29T23:54:04.8931649+00:00"
+                    }
+                ],
+    "Sondas":  [
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-1",
+                       "Inicio":  "2026-09-29T23:50:59.7037887+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  50
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-2",
+                       "Inicio":  "2026-09-29T23:50:59.7090881+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  49
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-3",
+                       "Inicio":  "2026-09-29T23:51:04.8498736+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-4",
+                       "Inicio":  "2026-09-29T23:51:04.8508782+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  15
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-5",
+                       "Inicio":  "2026-09-29T23:51:09.7712316+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-6",
+                       "Inicio":  "2026-09-29T23:51:09.7716680+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  15
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-7",
+                       "Inicio":  "2026-09-29T23:51:14.7257239+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  18
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-8",
+                       "Inicio":  "2026-09-29T23:51:14.7267202+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  17
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-9",
+                       "Inicio":  "2026-09-29T23:51:19.8382096+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  18
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-10",
+                       "Inicio":  "2026-09-29T23:51:19.8387276+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  18
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-11",
+                       "Inicio":  "2026-09-29T23:51:24.7885833+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-12",
+                       "Inicio":  "2026-09-29T23:51:24.7891121+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  19
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-13",
+                       "Inicio":  "2026-09-29T23:51:29.7213248+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  19
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-14",
+                       "Inicio":  "2026-09-29T23:51:29.7219565+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  229
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-15",
+                       "Inicio":  "2026-09-29T23:51:34.6974486+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  25
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-16",
+                       "Inicio":  "2026-09-29T23:51:34.6979674+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  26
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-17",
+                       "Inicio":  "2026-09-29T23:51:39.8240174+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-18",
+                       "Inicio":  "2026-09-29T23:51:39.8250221+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-19",
+                       "Inicio":  "2026-09-29T23:51:44.7894114+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  28
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-20",
+                       "Inicio":  "2026-09-29T23:51:44.7899255+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  27
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-21",
+                       "Inicio":  "2026-09-29T23:51:49.7109390+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-22",
+                       "Inicio":  "2026-09-29T23:51:49.7109390+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-23",
+                       "Inicio":  "2026-09-29T23:51:54.8378144+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  23
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-24",
+                       "Inicio":  "2026-09-29T23:51:54.8383337+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  22
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-25",
+                       "Inicio":  "2026-09-29T23:51:59.7387825+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  19
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-26",
+                       "Inicio":  "2026-09-29T23:51:59.7395025+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  19
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-27",
+                       "Inicio":  "2026-09-29T23:52:04.8625491+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-28",
+                       "Inicio":  "2026-09-29T23:52:04.8635605+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-29",
+                       "Inicio":  "2026-09-29T23:52:09.7783134+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-30",
+                       "Inicio":  "2026-09-29T23:52:09.7783134+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-31",
+                       "Inicio":  "2026-09-29T23:52:14.6937588+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  28
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-32",
+                       "Inicio":  "2026-09-29T23:52:14.6947675+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  28
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-33",
+                       "Inicio":  "2026-09-29T23:52:19.8411360+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  26
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-34",
+                       "Inicio":  "2026-09-29T23:52:19.8418906+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  25
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-35",
+                       "Inicio":  "2026-09-29T23:52:24.7432197+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  26
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-36",
+                       "Inicio":  "2026-09-29T23:52:24.7436666+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  26
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-37",
+                       "Inicio":  "2026-09-29T23:52:29.7018554+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-38",
+                       "Inicio":  "2026-09-29T23:52:29.7022334+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-39",
+                       "Inicio":  "2026-09-29T23:52:34.8423350+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-40",
+                       "Inicio":  "2026-09-29T23:52:34.8429604+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-41",
+                       "Inicio":  "2026-09-29T23:52:39.7406694+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  22
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-42",
+                       "Inicio":  "2026-09-29T23:52:39.7422473+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-43",
+                       "Inicio":  "2026-09-29T23:52:44.8437737+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-44",
+                       "Inicio":  "2026-09-29T23:52:44.8444733+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-45",
+                       "Inicio":  "2026-09-29T23:52:49.7591837+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  27
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-46",
+                       "Inicio":  "2026-09-29T23:52:49.7601961+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  27
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-47",
+                       "Inicio":  "2026-09-29T23:52:54.6916789+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  23
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-48",
+                       "Inicio":  "2026-09-29T23:52:54.6926939+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  22
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-49",
+                       "Inicio":  "2026-09-29T23:52:59.8187604+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-50",
+                       "Inicio":  "2026-09-29T23:52:59.8197558+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  19
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-51",
+                       "Inicio":  "2026-09-29T23:53:04.7212242+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  60
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-52",
+                       "Inicio":  "2026-09-29T23:53:04.7216246+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  61
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-53",
+                       "Inicio":  "2026-09-29T23:53:09.6930584+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-54",
+                       "Inicio":  "2026-09-29T23:53:09.6934861+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  19
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-55",
+                       "Inicio":  "2026-09-29T23:53:14.8263428+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-56",
+                       "Inicio":  "2026-09-29T23:53:14.8263428+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  23
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-57",
+                       "Inicio":  "2026-09-29T23:53:19.7349833+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  32
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-58",
+                       "Inicio":  "2026-09-29T23:53:19.7356534+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  32
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-59",
+                       "Inicio":  "2026-09-29T23:53:24.8702908+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-60",
+                       "Inicio":  "2026-09-29T23:53:24.8706405+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-61",
+                       "Inicio":  "2026-09-29T23:53:29.7957460+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  22
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-62",
+                       "Inicio":  "2026-09-29T23:53:29.7967553+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-63",
+                       "Inicio":  "2026-09-29T23:53:34.7142324+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-64",
+                       "Inicio":  "2026-09-29T23:53:34.7152330+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-65",
+                       "Inicio":  "2026-09-29T23:53:39.8335838+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  26
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-66",
+                       "Inicio":  "2026-09-29T23:53:39.8341180+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  26
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-67",
+                       "Inicio":  "2026-09-29T23:53:44.7375803+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  24
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-68",
+                       "Inicio":  "2026-09-29T23:53:44.7375803+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  25
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-69",
+                       "Inicio":  "2026-09-29T23:53:49.8458912+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  29
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-70",
+                       "Inicio":  "2026-09-29T23:53:49.8474045+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  29
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-71",
+                       "Inicio":  "2026-09-29T23:53:54.7808814+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-72",
+                       "Inicio":  "2026-09-29T23:53:54.7808814+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-73",
+                       "Inicio":  "2026-09-29T23:53:59.7070248+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  19
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-74",
+                       "Inicio":  "2026-09-29T23:53:59.7080266+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  19
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-75",
+                       "Inicio":  "2026-09-29T23:54:04.8714011+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  24
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-76",
+                       "Inicio":  "2026-09-29T23:54:04.8724008+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  23
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-77",
+                       "Inicio":  "2026-09-29T23:54:09.7884789+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  26
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-78",
+                       "Inicio":  "2026-09-29T23:54:09.7890488+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  25
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-79",
+                       "Inicio":  "2026-09-29T23:54:14.7176435+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  22
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-80",
+                       "Inicio":  "2026-09-29T23:54:14.7186016+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-81",
+                       "Inicio":  "2026-09-29T23:54:19.8724201+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-82",
+                       "Inicio":  "2026-09-29T23:54:19.8734186+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-83",
+                       "Inicio":  "2026-09-29T23:54:24.7846066+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  28
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-84",
+                       "Inicio":  "2026-09-29T23:54:24.7851236+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  28
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-85",
+                       "Inicio":  "2026-09-29T23:54:29.6947626+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-86",
+                       "Inicio":  "2026-09-29T23:54:29.6957697+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  19
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-87",
+                       "Inicio":  "2026-09-29T23:54:34.8529280+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-88",
+                       "Inicio":  "2026-09-29T23:54:34.8529280+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-89",
+                       "Inicio":  "2026-09-29T23:54:39.7943505+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-90",
+                       "Inicio":  "2026-09-29T23:54:39.7949101+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  19
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-91",
+                       "Inicio":  "2026-09-29T23:54:44.7353614+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  28
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-92",
+                       "Inicio":  "2026-09-29T23:54:44.7363692+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  27
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-93",
+                       "Inicio":  "2026-09-29T23:54:49.8472569+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  23
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-94",
+                       "Inicio":  "2026-09-29T23:54:49.8477157+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  22
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-95",
+                       "Inicio":  "2026-09-29T23:54:54.7905782+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  22
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-96",
+                       "Inicio":  "2026-09-29T23:54:54.7915781+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-97",
+                       "Inicio":  "2026-09-29T23:54:59.7294838+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  29
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-98",
+                       "Inicio":  "2026-09-29T23:54:59.7294838+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  29
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-99",
+                       "Inicio":  "2026-09-29T23:55:04.8484441+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  22
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-100",
+                       "Inicio":  "2026-09-29T23:55:04.8493699+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-101",
+                       "Inicio":  "2026-09-29T23:55:09.8139361+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  26
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-102",
+                       "Inicio":  "2026-09-29T23:55:09.8149474+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  26
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-103",
+                       "Inicio":  "2026-09-29T23:55:14.7767706+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  26
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-104",
+                       "Inicio":  "2026-09-29T23:55:14.7777776+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  26
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-105",
+                       "Inicio":  "2026-09-29T23:55:19.7114301+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  23
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-106",
+                       "Inicio":  "2026-09-29T23:55:19.7120305+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  23
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-107",
+                       "Inicio":  "2026-09-29T23:55:24.8512890+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-108",
+                       "Inicio":  "2026-09-29T23:55:24.8524519+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  19
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-109",
+                       "Inicio":  "2026-09-29T23:55:30.1543301+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  31
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-110",
+                       "Inicio":  "2026-09-29T23:55:30.1548669+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  31
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-111",
+                       "Inicio":  "2026-09-29T23:55:35.2912687+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  20
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-112",
+                       "Inicio":  "2026-09-29T23:55:35.2919113+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  19
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-113",
+                       "Inicio":  "2026-09-29T23:55:40.2020504+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-114",
+                       "Inicio":  "2026-09-29T23:55:40.2030546+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  15
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-115",
+                       "Inicio":  "2026-09-29T23:55:45.2979131+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-116",
+                       "Inicio":  "2026-09-29T23:55:45.2983812+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  15
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carga-alta-painel-117",
+                       "Inicio":  "2026-09-29T23:55:50.2109900+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  2034
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carga-alta-planilha-118",
+                       "Inicio":  "2026-09-29T23:55:50.2117143+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  2033
+                   }
+               ]
+}

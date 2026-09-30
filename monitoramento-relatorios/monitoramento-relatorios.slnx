@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="monitoramento-relatorios.csproj" />
+  <Project Path="../monitoramento-relatorios.tests/monitoramento-relatorios.tests.csproj" />
 </Solution>

@@ -1,0 +1,1232 @@
+{
+    "Cenario":  "relatorios-lento",
+    "Parametros":  {
+                       "DuracaoFalhaSegundos":  150,
+                       "LatenciaMs":  4000,
+                       "CargaAlvo":  350,
+                       "Taxa":  5
+                   },
+    "Detalhe":  null,
+    "T0":  "2026-09-29T23:44:59.4419506+00:00",
+    "T1":  "2026-09-29T23:47:29.5143731+00:00",
+    "T2":  "2026-09-29T23:49:56.7237843+00:00",
+    "Alertas":  [
+                    {
+                        "Alerta":  "TaxaErro5xxAlta",
+                        "Alvo":  "motos",
+                        "Severidade":  "critica",
+                        "Descricao":  "11.62% das respostas de motos foram 5xx nos Ãºltimos 2 min (limite: 5%).",
+                        "Pendente":  "2026-09-29T23:45:56.4232825+00:00",
+                        "Disparou":  "2026-09-29T23:47:14.7129700+00:00",
+                        "Resolveu":  "2026-09-29T23:48:59.5933633+00:00"
+                    },
+                    {
+                        "Alerta":  "LatenciaP95Alta",
+                        "Alvo":  "motos",
+                        "Severidade":  "aviso",
+                        "Descricao":  "O p95 de motos estÃ¡ em 8.87s (limite: 500 ms).",
+                        "Pendente":  "2026-09-29T23:45:34.0170343+00:00",
+                        "Disparou":  "2026-09-29T23:46:49.6633427+00:00",
+                        "Resolveu":  "2026-09-29T23:47:49.6729988+00:00"
+                    },
+                    {
+                        "Alerta":  "FalhaIntegracaoRelatorios",
+                        "Alvo":  "carros / planilha_vendas",
+                        "Severidade":  "aviso",
+                        "Descricao":  "1 chamada(s) de carros a RelatÃ³rios falharam nos Ãºltimos 2 min, mesmo apÃ³s os retries.",
+                        "Pendente":  "2026-09-29T23:45:24.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:45:39.6546911+00:00",
+                        "Resolveu":  "2026-09-29T23:49:54.7093833+00:00"
+                    },
+                    {
+                        "Alerta":  "PainelDegradado",
+                        "Alvo":  "",
+                        "Severidade":  "aviso",
+                        "Descricao":  "26.77 resposta(s) do /api/painel saÃ­ram sem indicadores nos Ãºltimos 2 min (RelatÃ³rios indisponÃ­vel).",
+                        "Pendente":  "2026-09-29T23:45:24.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:45:39.6586922+00:00",
+                        "Resolveu":  "2026-09-29T23:49:39.6641242+00:00"
+                    },
+                    {
+                        "Alerta":  "FalhaIntegracaoRelatorios",
+                        "Alvo":  "carros / planilha_estoque",
+                        "Severidade":  "aviso",
+                        "Descricao":  "7 chamada(s) de carros a RelatÃ³rios falharam nos Ãºltimos 2 min, mesmo apÃ³s os retries.",
+                        "Pendente":  "2026-09-29T23:45:24.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:45:39.6536921+00:00",
+                        "Resolveu":  "2026-09-29T23:49:54.7104289+00:00"
+                    },
+                    {
+                        "Alerta":  "FalhaIntegracaoRelatorios",
+                        "Alvo":  "carros / indicadores",
+                        "Severidade":  "aviso",
+                        "Descricao":  "13.71 chamada(s) de carros a RelatÃ³rios falharam nos Ãºltimos 2 min, mesmo apÃ³s os retries.",
+                        "Pendente":  "2026-09-29T23:45:24.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:45:39.6496864+00:00",
+                        "Resolveu":  "2026-09-29T23:49:54.7120556+00:00"
+                    },
+                    {
+                        "Alerta":  "FalhaIntegracaoRelatorios",
+                        "Alvo":  "motos / planilha_estoque",
+                        "Severidade":  "aviso",
+                        "Descricao":  "3 chamada(s) de motos a RelatÃ³rios falharam nos Ãºltimos 2 min, mesmo apÃ³s os retries.",
+                        "Pendente":  "2026-09-29T23:45:39.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:45:54.5971968+00:00",
+                        "Resolveu":  "2026-09-29T23:49:54.7131176+00:00"
+                    },
+                    {
+                        "Alerta":  "FalhaIntegracaoRelatorios",
+                        "Alvo":  "motos / planilha_vendas",
+                        "Severidade":  "aviso",
+                        "Descricao":  "2 chamada(s) de motos a RelatÃ³rios falharam nos Ãºltimos 2 min, mesmo apÃ³s os retries.",
+                        "Pendente":  "2026-09-29T23:45:39.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:45:54.5945155+00:00",
+                        "Resolveu":  "2026-09-29T23:49:54.7141605+00:00"
+                    },
+                    {
+                        "Alerta":  "FalhaIntegracaoRelatorios",
+                        "Alvo":  "motos / indicadores",
+                        "Severidade":  "aviso",
+                        "Descricao":  "6 chamada(s) de motos a RelatÃ³rios falharam nos Ãºltimos 2 min, mesmo apÃ³s os retries.",
+                        "Pendente":  "2026-09-29T23:45:24.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:45:39.6526924+00:00",
+                        "Resolveu":  "2026-09-29T23:49:54.7152069+00:00"
+                    },
+                    {
+                        "Alerta":  "TaxaErro5xxAlta",
+                        "Alvo":  "bff",
+                        "Severidade":  "critica",
+                        "Descricao":  "18.27% das respostas de bff foram 5xx nos Ãºltimos 2 min (limite: 5%).",
+                        "Pendente":  "2026-09-29T23:45:56.4232825+00:00",
+                        "Disparou":  "2026-09-29T23:47:14.6994241+00:00",
+                        "Resolveu":  "2026-09-29T23:49:29.6394717+00:00"
+                    },
+                    {
+                        "Alerta":  "RetriesFrequentes",
+                        "Alvo":  "carros / relatorios-standard",
+                        "Severidade":  "aviso",
+                        "Descricao":  "48 retries nos Ãºltimos 2 min: a dependÃªncia estÃ¡ instÃ¡vel, mesmo que as requisiÃ§Ãµes ainda funcionem.",
+                        "Pendente":  "2026-09-29T23:45:24.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:45:39.6616937+00:00",
+                        "Resolveu":  "2026-09-29T23:49:24.7317845+00:00"
+                    },
+                    {
+                        "Alerta":  "LatenciaP95Alta",
+                        "Alvo":  "bff",
+                        "Severidade":  "aviso",
+                        "Descricao":  "O p95 de bff estÃ¡ em 9.522s (limite: 500 ms).",
+                        "Pendente":  "2026-09-29T23:45:34.0170343+00:00",
+                        "Disparou":  "2026-09-29T23:46:49.6659967+00:00",
+                        "Resolveu":  "2026-09-29T23:49:19.6319086+00:00"
+                    },
+                    {
+                        "Alerta":  "LatenciaP95Alta",
+                        "Alvo":  "carros",
+                        "Severidade":  "aviso",
+                        "Descricao":  "O p95 de carros estÃ¡ em 9.64s (limite: 500 ms).",
+                        "Pendente":  "2026-09-29T23:45:34.0170343+00:00",
+                        "Disparou":  "2026-09-29T23:46:49.6649335+00:00",
+                        "Resolveu":  "2026-09-29T23:49:19.6335171+00:00"
+                    },
+                    {
+                        "Alerta":  "TaxaErro5xxAlta",
+                        "Alvo":  "carros",
+                        "Severidade":  "critica",
+                        "Descricao":  "14.2% das respostas de carros foram 5xx nos Ãºltimos 2 min (limite: 5%).",
+                        "Pendente":  "2026-09-29T23:45:41.4232825+00:00",
+                        "Disparou":  "2026-09-29T23:46:59.6593841+00:00",
+                        "Resolveu":  "2026-09-29T23:49:29.6405452+00:00"
+                    },
+                    {
+                        "Alerta":  "RetriesFrequentes",
+                        "Alvo":  "motos / relatorios-standard",
+                        "Severidade":  "aviso",
+                        "Descricao":  "21.72 retries nos Ãºltimos 2 min: a dependÃªncia estÃ¡ instÃ¡vel, mesmo que as requisiÃ§Ãµes ainda funcionem.",
+                        "Pendente":  "2026-09-29T23:45:24.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:45:39.6606922+00:00",
+                        "Resolveu":  "2026-09-29T23:48:39.5457199+00:00"
+                    }
+                ],
+    "Sondas":  [
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-1",
+                       "Inicio":  "2026-09-29T23:44:59.5075649+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8068
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-2",
+                       "Inicio":  "2026-09-29T23:44:59.5130834+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8066
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-3",
+                       "Inicio":  "2026-09-29T23:45:04.6742531+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8042
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-4",
+                       "Inicio":  "2026-09-29T23:45:04.6742531+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8042
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-5",
+                       "Inicio":  "2026-09-29T23:45:09.6366414+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8182
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-6",
+                       "Inicio":  "2026-09-29T23:45:09.6371779+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8181
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-8",
+                       "Inicio":  "2026-09-29T23:45:14.5509095+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  4719
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-10",
+                       "Inicio":  "2026-09-29T23:45:19.6726620+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  217
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-7",
+                       "Inicio":  "2026-09-29T23:45:14.5499024+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8087
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-12",
+                       "Inicio":  "2026-09-29T23:45:24.6762051+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  215
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-9",
+                       "Inicio":  "2026-09-29T23:45:19.6720542+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8088
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-11",
+                       "Inicio":  "2026-09-29T23:45:24.6752049+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  3897
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-13",
+                       "Inicio":  "2026-09-29T23:45:29.6248271+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8163
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-14",
+                       "Inicio":  "2026-09-29T23:45:29.6255348+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8162
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-15",
+                       "Inicio":  "2026-09-29T23:45:34.5220954+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8194
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-16",
+                       "Inicio":  "2026-09-29T23:45:34.5225767+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8194
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-17",
+                       "Inicio":  "2026-09-29T23:45:39.6220256+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8012
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-18",
+                       "Inicio":  "2026-09-29T23:45:39.6230277+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8011
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-19",
+                       "Inicio":  "2026-09-29T23:45:44.5517069+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8185
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-20",
+                       "Inicio":  "2026-09-29T23:45:44.5527051+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8184
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-23",
+                       "Inicio":  "2026-09-29T23:45:54.5906149+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  9
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-24",
+                       "Inicio":  "2026-09-29T23:45:54.5909838+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-21",
+                       "Inicio":  "2026-09-29T23:45:49.6698288+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  5342
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-22",
+                       "Inicio":  "2026-09-29T23:45:49.6707638+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  5543
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-25",
+                       "Inicio":  "2026-09-29T23:45:59.5151584+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  218
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-26",
+                       "Inicio":  "2026-09-29T23:45:59.5156767+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  217
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-27",
+                       "Inicio":  "2026-09-29T23:46:04.6620717+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8209
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-28",
+                       "Inicio":  "2026-09-29T23:46:04.6630724+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8209
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-29",
+                       "Inicio":  "2026-09-29T23:46:09.5731374+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8208
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-30",
+                       "Inicio":  "2026-09-29T23:46:09.5741058+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8207
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-31",
+                       "Inicio":  "2026-09-29T23:46:14.6975911+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8203
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-32",
+                       "Inicio":  "2026-09-29T23:46:14.6985894+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8202
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-33",
+                       "Inicio":  "2026-09-29T23:46:19.6162616+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8169
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-34",
+                       "Inicio":  "2026-09-29T23:46:19.6172618+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8168
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-35",
+                       "Inicio":  "2026-09-29T23:46:24.5323137+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  4293
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-36",
+                       "Inicio":  "2026-09-29T23:46:24.5328391+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  4496
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-38",
+                       "Inicio":  "2026-09-29T23:46:29.6345204+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  216
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-39",
+                       "Inicio":  "2026-09-29T23:46:34.5387390+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  6
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-40",
+                       "Inicio":  "2026-09-29T23:46:34.5392592+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  6
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-37",
+                       "Inicio":  "2026-09-29T23:46:29.6345204+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  5324
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-41",
+                       "Inicio":  "2026-09-29T23:46:39.6495443+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8180
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-42",
+                       "Inicio":  "2026-09-29T23:46:39.6495443+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8180
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-43",
+                       "Inicio":  "2026-09-29T23:46:44.5531122+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8178
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-44",
+                       "Inicio":  "2026-09-29T23:46:44.5531122+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8178
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-45",
+                       "Inicio":  "2026-09-29T23:46:49.6570591+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8159
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-46",
+                       "Inicio":  "2026-09-29T23:46:49.6580582+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8158
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-47",
+                       "Inicio":  "2026-09-29T23:46:54.5504067+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  8168
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-48",
+                       "Inicio":  "2026-09-29T23:46:54.5514129+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  8168
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-51",
+                       "Inicio":  "2026-09-29T23:47:04.6061467+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  7
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-52",
+                       "Inicio":  "2026-09-29T23:47:04.6070571+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  6
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-49",
+                       "Inicio":  "2026-09-29T23:46:59.6534110+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  5376
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-50",
+                       "Inicio":  "2026-09-29T23:46:59.6538302+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  5375
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-53",
+                       "Inicio":  "2026-09-29T23:47:09.5164034+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  6
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-54",
+                       "Inicio":  "2026-09-29T23:47:09.5169320+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  6
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-55",
+                       "Inicio":  "2026-09-29T23:47:14.6734208+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  63
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-56",
+                       "Inicio":  "2026-09-29T23:47:14.6744299+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  62
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-58",
+                       "Inicio":  "2026-09-29T23:47:19.6565311+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  5
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-59",
+                       "Inicio":  "2026-09-29T23:47:24.6053880+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  219
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-60",
+                       "Inicio":  "2026-09-29T23:47:24.6063779+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  218
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-57",
+                       "Inicio":  "2026-09-29T23:47:19.6555521+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  5585
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-61",
+                       "Inicio":  "2026-09-29T23:47:29.5391012+00:00",
+                       "Status":  200,
+                       "Ok":  false,
+                       "Detalhe":  "degradado (sem indicadores)",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-62",
+                       "Inicio":  "2026-09-29T23:47:29.5400139+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  15
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-63",
+                       "Inicio":  "2026-09-29T23:47:34.6522958+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  10
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-64",
+                       "Inicio":  "2026-09-29T23:47:34.6522958+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  10
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-65",
+                       "Inicio":  "2026-09-29T23:47:39.5623164+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  217
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-66",
+                       "Inicio":  "2026-09-29T23:47:39.5631297+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  218
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-67",
+                       "Inicio":  "2026-09-29T23:47:44.7031357+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  217
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-68",
+                       "Inicio":  "2026-09-29T23:47:44.7041032+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  217
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-69",
+                       "Inicio":  "2026-09-29T23:47:49.6674421+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  9
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-70",
+                       "Inicio":  "2026-09-29T23:47:49.6678638+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  9
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-71",
+                       "Inicio":  "2026-09-29T23:47:54.5991584+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  220
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-72",
+                       "Inicio":  "2026-09-29T23:47:54.6001258+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  219
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-73",
+                       "Inicio":  "2026-09-29T23:47:59.7139039+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  217
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-74",
+                       "Inicio":  "2026-09-29T23:47:59.7149060+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  216
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-75",
+                       "Inicio":  "2026-09-29T23:48:04.6388610+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  7
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-76",
+                       "Inicio":  "2026-09-29T23:48:04.6398656+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  218
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-77",
+                       "Inicio":  "2026-09-29T23:48:09.5596564+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  7
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-78",
+                       "Inicio":  "2026-09-29T23:48:09.5605351+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  218
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-79",
+                       "Inicio":  "2026-09-29T23:48:14.7333255+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  216
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-80",
+                       "Inicio":  "2026-09-29T23:48:14.7333255+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  217
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-81",
+                       "Inicio":  "2026-09-29T23:48:19.6645941+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  218
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-82",
+                       "Inicio":  "2026-09-29T23:48:19.6655358+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  217
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-83",
+                       "Inicio":  "2026-09-29T23:48:24.5871693+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  217
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-84",
+                       "Inicio":  "2026-09-29T23:48:24.5881753+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  216
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-85",
+                       "Inicio":  "2026-09-29T23:48:29.6912102+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  217
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-86",
+                       "Inicio":  "2026-09-29T23:48:29.6915965+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  217
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-87",
+                       "Inicio":  "2026-09-29T23:48:34.6397515+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  6
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-88",
+                       "Inicio":  "2026-09-29T23:48:34.6401989+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  218
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-89",
+                       "Inicio":  "2026-09-29T23:48:39.5400521+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  217
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-90",
+                       "Inicio":  "2026-09-29T23:48:39.5410502+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  216
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-91",
+                       "Inicio":  "2026-09-29T23:48:44.6270824+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  7
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-92",
+                       "Inicio":  "2026-09-29T23:48:44.6279681+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  218
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-93",
+                       "Inicio":  "2026-09-29T23:48:49.5423004+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  218
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-94",
+                       "Inicio":  "2026-09-29T23:48:49.5433011+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  217
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-95",
+                       "Inicio":  "2026-09-29T23:48:54.6952352+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  8
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-96",
+                       "Inicio":  "2026-09-29T23:48:54.6955531+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  218
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-97",
+                       "Inicio":  "2026-09-29T23:48:59.5882800+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  8
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-98",
+                       "Inicio":  "2026-09-29T23:48:59.5892785+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  218
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-99",
+                       "Inicio":  "2026-09-29T23:49:04.6839839+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  215
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-100",
+                       "Inicio":  "2026-09-29T23:49:04.6844359+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  214
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-101",
+                       "Inicio":  "2026-09-29T23:49:09.6130128+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  219
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-102",
+                       "Inicio":  "2026-09-29T23:49:09.6139889+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  219
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-103",
+                       "Inicio":  "2026-09-29T23:49:14.7383861+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  6
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-104",
+                       "Inicio":  "2026-09-29T23:49:14.7383861+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  218
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-105",
+                       "Inicio":  "2026-09-29T23:49:19.6271878+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  11
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-106",
+                       "Inicio":  "2026-09-29T23:49:19.6281828+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  10
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-107",
+                       "Inicio":  "2026-09-29T23:49:24.7275051+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  7
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-108",
+                       "Inicio":  "2026-09-29T23:49:24.7280322+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  216
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-109",
+                       "Inicio":  "2026-09-29T23:49:29.6329567+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  10
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-110",
+                       "Inicio":  "2026-09-29T23:49:29.6333401+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  10
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-111",
+                       "Inicio":  "2026-09-29T23:49:34.5401768+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  7
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-112",
+                       "Inicio":  "2026-09-29T23:49:34.5411708+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  219
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-113",
+                       "Inicio":  "2026-09-29T23:49:39.6592132+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  9
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-114",
+                       "Inicio":  "2026-09-29T23:49:39.6602132+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  216
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-115",
+                       "Inicio":  "2026-09-29T23:49:44.6449383+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  10
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-116",
+                       "Inicio":  "2026-09-29T23:49:44.6454844+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  215
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-117",
+                       "Inicio":  "2026-09-29T23:49:49.5936845+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  12
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-118",
+                       "Inicio":  "2026-09-29T23:49:49.5946855+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  12
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-relatorios-lento-painel-119",
+                       "Inicio":  "2026-09-29T23:49:54.7065331+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  2017
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-relatorios-lento-planilha-120",
+                       "Inicio":  "2026-09-29T23:49:54.7075299+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  2016
+                   }
+               ]
+}

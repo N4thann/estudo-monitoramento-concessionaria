@@ -1,0 +1,1079 @@
+{
+    "Cenario":  "carros-fora",
+    "Parametros":  {
+                       "DuracaoFalhaSegundos":  150,
+                       "LatenciaMs":  4000,
+                       "CargaAlvo":  150,
+                       "Taxa":  5
+                   },
+    "Detalhe":  null,
+    "T0":  "2026-09-29T23:21:29.8089342+00:00",
+    "T1":  "2026-09-29T23:24:01.0098622+00:00",
+    "T2":  "2026-09-29T23:26:14.3782881+00:00",
+    "Alertas":  [
+                    {
+                        "Alerta":  "ServicoFora",
+                        "Alvo":  "carros",
+                        "Severidade":  "critica",
+                        "Descricao":  "O Prometheus nÃ£o consegue ler o /metrics de carros (host.docker.internal:5128) hÃ¡ mais de 30 s.",
+                        "Pendente":  "2026-09-29T23:21:56.4232825+00:00",
+                        "Disparou":  "2026-09-29T23:22:46.2272700+00:00",
+                        "Resolveu":  "2026-09-29T23:24:42.3371983+00:00"
+                    },
+                    {
+                        "Alerta":  "TaxaErro5xxAlta",
+                        "Alvo":  "bff",
+                        "Severidade":  "critica",
+                        "Descricao":  "62.71% das respostas de bff foram 5xx nos Ãºltimos 2 min (limite: 5%).",
+                        "Pendente":  "2026-09-29T23:22:11.4232825+00:00",
+                        "Disparou":  "2026-09-29T23:23:30.6892678+00:00",
+                        "Resolveu":  "2026-09-29T23:26:12.3718836+00:00"
+                    },
+                    {
+                        "Alerta":  "LatenciaP95Alta",
+                        "Alvo":  "bff",
+                        "Severidade":  "aviso",
+                        "Descricao":  "O p95 de bff estÃ¡ em 10s (limite: 500 ms).",
+                        "Pendente":  "2026-09-29T23:22:19.0170343+00:00",
+                        "Disparou":  "2026-09-29T23:23:35.7530814+00:00",
+                        "Resolveu":  "2026-09-29T23:24:22.1030128+00:00"
+                    },
+                    {
+                        "Alerta":  "RetriesFrequentes",
+                        "Alvo":  "bff / carros-standard",
+                        "Severidade":  "aviso",
+                        "Descricao":  "64.68 retries nos Ãºltimos 2 min: a dependÃªncia estÃ¡ instÃ¡vel, mesmo que as requisiÃ§Ãµes ainda funcionem.",
+                        "Pendente":  "2026-09-29T23:22:09.5812904+00:00",
+                        "Disparou":  "2026-09-29T23:22:26.0043796+00:00",
+                        "Resolveu":  "2026-09-29T23:24:57.5048427+00:00"
+                    }
+                ],
+    "Sondas":  [
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-1",
+                       "Inicio":  "2026-09-29T23:21:30.3953194+00:00",
+                       "Status":  504,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  15224
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-2",
+                       "Inicio":  "2026-09-29T23:21:30.4031045+00:00",
+                       "Status":  504,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  15220
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-3",
+                       "Inicio":  "2026-09-29T23:21:35.4940019+00:00",
+                       "Status":  504,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  15176
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-4",
+                       "Inicio":  "2026-09-29T23:21:35.4940019+00:00",
+                       "Status":  504,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  15176
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-5",
+                       "Inicio":  "2026-09-29T23:21:40.5566300+00:00",
+                       "Status":  504,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  18181
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-6",
+                       "Inicio":  "2026-09-29T23:21:40.5566300+00:00",
+                       "Status":  504,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  18181
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-7",
+                       "Inicio":  "2026-09-29T23:21:45.6085412+00:00",
+                       "Status":  504,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  15152
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-8",
+                       "Inicio":  "2026-09-29T23:21:45.6085412+00:00",
+                       "Status":  504,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  15152
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-14",
+                       "Inicio":  "2026-09-29T23:22:00.7593437+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  2
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-13",
+                       "Inicio":  "2026-09-29T23:22:00.7587952+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1009
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-10",
+                       "Inicio":  "2026-09-29T23:21:50.6684542+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  13116
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-9",
+                       "Inicio":  "2026-09-29T23:21:50.6679177+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  14124
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-15",
+                       "Inicio":  "2026-09-29T23:22:05.8028799+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1007
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-16",
+                       "Inicio":  "2026-09-29T23:22:05.8033055+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1008
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-11",
+                       "Inicio":  "2026-09-29T23:21:55.7117162+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  14122
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-12",
+                       "Inicio":  "2026-09-29T23:21:55.7127200+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  15132
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-18",
+                       "Inicio":  "2026-09-29T23:22:10.8428307+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  2
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-17",
+                       "Inicio":  "2026-09-29T23:22:10.8425260+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1009
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-19",
+                       "Inicio":  "2026-09-29T23:22:15.8893306+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  23
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-20",
+                       "Inicio":  "2026-09-29T23:22:15.8897775+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  23
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-21",
+                       "Inicio":  "2026-09-29T23:22:20.9429529+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-22",
+                       "Inicio":  "2026-09-29T23:22:20.9439480+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  5063
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-23",
+                       "Inicio":  "2026-09-29T23:22:25.9969357+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  11
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-24",
+                       "Inicio":  "2026-09-29T23:22:25.9982469+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  9
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-26",
+                       "Inicio":  "2026-09-29T23:22:31.0573965+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  4
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-25",
+                       "Inicio":  "2026-09-29T23:22:31.0566118+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-28",
+                       "Inicio":  "2026-09-29T23:22:36.1115469+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-27",
+                       "Inicio":  "2026-09-29T23:22:36.1110993+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1007
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-30",
+                       "Inicio":  "2026-09-29T23:22:41.1649520+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-29",
+                       "Inicio":  "2026-09-29T23:22:41.1644210+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1013
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-32",
+                       "Inicio":  "2026-09-29T23:22:46.2254178+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  4
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-31",
+                       "Inicio":  "2026-09-29T23:22:46.2247892+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1009
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-34",
+                       "Inicio":  "2026-09-29T23:22:51.2726737+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  2
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-33",
+                       "Inicio":  "2026-09-29T23:22:51.2720972+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1015
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-35",
+                       "Inicio":  "2026-09-29T23:22:56.3346632+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1013
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-36",
+                       "Inicio":  "2026-09-29T23:22:56.3352500+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-38",
+                       "Inicio":  "2026-09-29T23:23:00.3849523+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  2
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-37",
+                       "Inicio":  "2026-09-29T23:23:00.3846400+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-40",
+                       "Inicio":  "2026-09-29T23:23:05.4335323+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-39",
+                       "Inicio":  "2026-09-29T23:23:05.4331757+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-42",
+                       "Inicio":  "2026-09-29T23:23:10.4759116+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-41",
+                       "Inicio":  "2026-09-29T23:23:10.4749065+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1010
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-44",
+                       "Inicio":  "2026-09-29T23:23:15.5347005+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-43",
+                       "Inicio":  "2026-09-29T23:23:15.5341853+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1007
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-46",
+                       "Inicio":  "2026-09-29T23:23:20.5910675+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-45",
+                       "Inicio":  "2026-09-29T23:23:20.5900668+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1008
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-48",
+                       "Inicio":  "2026-09-29T23:23:25.6432468+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-47",
+                       "Inicio":  "2026-09-29T23:23:25.6423780+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-50",
+                       "Inicio":  "2026-09-29T23:23:30.6874482+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  4
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-49",
+                       "Inicio":  "2026-09-29T23:23:30.6864486+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1015
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-52",
+                       "Inicio":  "2026-09-29T23:23:35.7515100+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  4
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-51",
+                       "Inicio":  "2026-09-29T23:23:35.7509941+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1009
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-54",
+                       "Inicio":  "2026-09-29T23:23:40.8103841+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-53",
+                       "Inicio":  "2026-09-29T23:23:40.8097485+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1015
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-56",
+                       "Inicio":  "2026-09-29T23:23:45.8708106+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-55",
+                       "Inicio":  "2026-09-29T23:23:45.8698048+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-58",
+                       "Inicio":  "2026-09-29T23:23:50.9224627+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  2
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-57",
+                       "Inicio":  "2026-09-29T23:23:50.9214894+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1010
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-60",
+                       "Inicio":  "2026-09-29T23:23:55.9723227+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  2
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-59",
+                       "Inicio":  "2026-09-29T23:23:55.9718804+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1008
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-61",
+                       "Inicio":  "2026-09-29T23:24:01.8853954+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  12
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-62",
+                       "Inicio":  "2026-09-29T23:24:01.8863934+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  11
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-64",
+                       "Inicio":  "2026-09-29T23:24:06.9340583+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  4
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-63",
+                       "Inicio":  "2026-09-29T23:24:06.9337262+00:00",
+                       "Status":  503,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  1009
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-65",
+                       "Inicio":  "2026-09-29T23:24:11.9891488+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1015
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-66",
+                       "Inicio":  "2026-09-29T23:24:11.9900308+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1014
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-67",
+                       "Inicio":  "2026-09-29T23:24:17.0427535+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-68",
+                       "Inicio":  "2026-09-29T23:24:17.0437544+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-69",
+                       "Inicio":  "2026-09-29T23:24:22.0984792+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  9
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-70",
+                       "Inicio":  "2026-09-29T23:24:22.0993738+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1024
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-71",
+                       "Inicio":  "2026-09-29T23:24:27.1767620+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-72",
+                       "Inicio":  "2026-09-29T23:24:27.1777694+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1010
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-73",
+                       "Inicio":  "2026-09-29T23:24:32.2276222+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1014
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-74",
+                       "Inicio":  "2026-09-29T23:24:32.2285879+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1013
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-75",
+                       "Inicio":  "2026-09-29T23:24:37.2830409+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1013
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-76",
+                       "Inicio":  "2026-09-29T23:24:37.2835218+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-77",
+                       "Inicio":  "2026-09-29T23:24:42.3343079+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-78",
+                       "Inicio":  "2026-09-29T23:24:42.3352720+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-79",
+                       "Inicio":  "2026-09-29T23:24:47.3876575+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-80",
+                       "Inicio":  "2026-09-29T23:24:47.3886598+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-81",
+                       "Inicio":  "2026-09-29T23:24:52.4449048+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1010
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-82",
+                       "Inicio":  "2026-09-29T23:24:52.4459072+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1009
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-83",
+                       "Inicio":  "2026-09-29T23:24:57.5017290+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-84",
+                       "Inicio":  "2026-09-29T23:24:57.5027293+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-85",
+                       "Inicio":  "2026-09-29T23:25:02.5575929+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1014
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-86",
+                       "Inicio":  "2026-09-29T23:25:02.5581245+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1014
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-87",
+                       "Inicio":  "2026-09-29T23:25:07.6118289+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1013
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-88",
+                       "Inicio":  "2026-09-29T23:25:07.6128228+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-89",
+                       "Inicio":  "2026-09-29T23:25:12.6698586+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1015
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-90",
+                       "Inicio":  "2026-09-29T23:25:12.6709230+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1014
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-91",
+                       "Inicio":  "2026-09-29T23:25:17.7300121+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1010
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-92",
+                       "Inicio":  "2026-09-29T23:25:17.7303221+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1009
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-93",
+                       "Inicio":  "2026-09-29T23:25:22.7895354+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1015
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-94",
+                       "Inicio":  "2026-09-29T23:25:22.7903257+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1014
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-95",
+                       "Inicio":  "2026-09-29T23:25:27.8531075+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1005
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-96",
+                       "Inicio":  "2026-09-29T23:25:27.8541059+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1005
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-97",
+                       "Inicio":  "2026-09-29T23:25:31.8897775+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1014
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-98",
+                       "Inicio":  "2026-09-29T23:25:31.8906189+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1013
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-99",
+                       "Inicio":  "2026-09-29T23:25:36.9538996+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1013
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-100",
+                       "Inicio":  "2026-09-29T23:25:36.9538996+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1013
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-101",
+                       "Inicio":  "2026-09-29T23:25:42.0197082+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1013
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-102",
+                       "Inicio":  "2026-09-29T23:25:42.0200997+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-103",
+                       "Inicio":  "2026-09-29T23:25:47.0846715+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-104",
+                       "Inicio":  "2026-09-29T23:25:47.0850252+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1013
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-105",
+                       "Inicio":  "2026-09-29T23:25:52.1371406+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1008
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-106",
+                       "Inicio":  "2026-09-29T23:25:52.1381441+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1007
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-107",
+                       "Inicio":  "2026-09-29T23:25:57.1975834+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1016
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-108",
+                       "Inicio":  "2026-09-29T23:25:57.1985821+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1015
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-109",
+                       "Inicio":  "2026-09-29T23:26:02.2530049+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-110",
+                       "Inicio":  "2026-09-29T23:26:02.2534457+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1011
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-111",
+                       "Inicio":  "2026-09-29T23:26:07.3159086+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-112",
+                       "Inicio":  "2026-09-29T23:26:07.3169146+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  1012
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-carros-fora-painel-113",
+                       "Inicio":  "2026-09-29T23:26:12.3692372+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  2009
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-carros-fora-planilha-114",
+                       "Inicio":  "2026-09-29T23:26:12.3702363+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  2008
+                   }
+               ]
+}

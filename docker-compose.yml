@@ -1,0 +1,232 @@
+# Concessionária: observabilidade + (opcional) aplicação completa em contêineres.
+#
+#   docker compose up -d                   → só a observabilidade. As APIs rodam no host com "dotnet run".
+#   docker compose --profile app up -d     → tudo: observabilidade + Mongo + Toxiproxy + 4 APIs + front.
+#   docker compose --profile app up -d --build carros   → reconstrói uma API depois de mudar o código.
+#
+# Nos dois modos, as APIs ficam nas mesmas portas do host (5101, 5128, 5010, 5051), e o Prometheus lê o
+# /metrics por host.docker.internal:<porta>. Por isso a configuração dele é igual nos dois modos.
+# Não rode "dotnet run" e o perfil app ao mesmo tempo: as portas vão conflitar.
+# Portas publicadas só em 127.0.0.1: é ambiente local de estudo, não precisa ficar visível na rede.
+name: concessionaria-observabilidade
+
+# Configuração comum das 4 APIs em contêiner.
+x-api: &api
+  profiles: [app]
+  restart: unless-stopped
+  # Limites por contêiner: dão um "100%" para os alertas de CPU e memória e permitem simular falta de recurso.
+  cpus: 1.0
+  mem_limit: 384m
+  environment: &api-ambiente
+    # Development liga o seed de veículos de exemplo (Carros/Motos) e o /openapi.
+    ASPNETCORE_ENVIRONMENT: Development
+    # Workstation GC: com limite de memória baixo, o Server GC reserva heaps demais.
+    DOTNET_gcServer: "0"
+    Telemetria__EndpointOtlp: http://otel-collector:4317
+  depends_on:
+    - otel-collector
+
+services:
+  # ─── Observabilidade ──────────────────────────────────────────────────────────
+  otel-collector:
+    image: otel/opentelemetry-collector:0.162.0
+    command: ["--config=/etc/otelcol/config.yaml"]
+    volumes:
+      - ./observabilidade/otel-collector/config.yaml:/etc/otelcol/config.yaml:ro
+    ports:
+      - "127.0.0.1:4317:4317" # OTLP gRPC (usado pelas APIs)
+      - "127.0.0.1:4318:4318" # OTLP HTTP
+    depends_on:
+      - tempo
+      - loki
+    restart: unless-stopped
+
+  tempo:
+    image: grafana/tempo:3.1.0
+    command: ["-target=all", "-config.file=/etc/tempo.yaml"]
+    volumes:
+      - ./observabilidade/tempo/tempo.yaml:/etc/tempo.yaml:ro
+      - tempo-dados:/var/tempo
+    ports:
+      - "127.0.0.1:3200:3200"
+    restart: unless-stopped
+
+  loki:
+    image: grafana/loki:3.7.8
+    command: ["-config.file=/etc/loki/loki.yaml"]
+    volumes:
+      - ./observabilidade/loki/loki.yaml:/etc/loki/loki.yaml:ro
+      - loki-dados:/loki
+    ports:
+      - "127.0.0.1:3100:3100"
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:v3.15.0
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      # Recebe as métricas que o Tempo calcula a partir dos spans (mapa de serviços e span metrics).
+      - --web.enable-remote-write-receiver
+      - --enable-feature=exemplar-storage
+    volumes:
+      - ./observabilidade/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./observabilidade/prometheus/alertas.yml:/etc/prometheus/alertas.yml:ro
+      - prometheus-dados:/prometheus
+    ports:
+      - "127.0.0.1:9090:9090"
+    # No Linux o host.docker.internal não existe por padrão; no Docker Desktop isso é inofensivo.
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:13.2.3
+    environment:
+      # Leitura sem login (o Grafana 13 só permite anônimo como Viewer); para editar, entrar como admin/admin.
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Viewer
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_ANALYTICS_REPORTING_ENABLED=false
+      - GF_DEFAULT_LOCALE=pt-BR
+    volumes:
+      - ./observabilidade/grafana/provisioning:/etc/grafana/provisioning:ro
+      - grafana-dados:/var/lib/grafana
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      - prometheus
+      - tempo
+      - loki
+    restart: unless-stopped
+
+  # ─── Aplicação (perfil "app") ─────────────────────────────────────────────────
+  mongo:
+    image: mongo:8.0.32
+    profiles: [app]
+    # Cache do WiredTiger limitado: por padrão ele reserva metade da RAM do contêiner.
+    command: ["--wiredTigerCacheSizeGB", "0.25"]
+    mem_limit: 512m
+    # Sem porta publicada: o Mongo local (dotnet run) já usa a 27017 do host. As APIs em contêiner chegam
+    # nele pela rede interna, passando pelo Toxiproxy. Os bancos são separados do Mongo local.
+    volumes:
+      - mongo-dados:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  # Proxy de caos entre Carros/Motos e as dependências deles (Relatórios e Mongo). Sem "toxics", só repassa.
+  # Os cenários de falha injetam latência ou cortam conexões pela API dele (porta 8474).
+  toxiproxy:
+    image: ghcr.io/shopify/toxiproxy:2.12.0
+    profiles: [app]
+    command: ["-host=0.0.0.0", "-config=/config/toxiproxy.json"]
+    volumes:
+      - ./observabilidade/toxiproxy/toxiproxy.json:/config/toxiproxy.json:ro
+    ports:
+      - "127.0.0.1:8474:8474"
+    restart: unless-stopped
+
+  relatorios:
+    <<: *api
+    build:
+      context: .
+      dockerfile: docker/api.Dockerfile
+      args: { API: monitoramento-relatorios }
+    image: concessionaria/relatorios
+    ports:
+      - "127.0.0.1:5051:8080"
+
+  carros:
+    <<: *api
+    build:
+      context: .
+      dockerfile: docker/api.Dockerfile
+      args: { API: monitoramento-carros }
+    image: concessionaria/carros
+    environment:
+      <<: *api-ambiente
+      # serverSelectionTimeoutMS: sem Mongo, o driver desiste em 3 s, e não nos 30 s do padrão (que estouraria
+      # o timeout do BFF e esconderia a causa real).
+      MongoDb__StringConexao: mongodb://toxiproxy:27018/?directConnection=true&serverSelectionTimeoutMS=3000
+      Integracoes__RelatoriosApi: http://toxiproxy:8666/
+    depends_on:
+      otel-collector: { condition: service_started }
+      toxiproxy: { condition: service_started }
+      mongo: { condition: service_healthy }
+    ports:
+      - "127.0.0.1:5128:8080"
+
+  motos:
+    <<: *api
+    build:
+      context: .
+      dockerfile: docker/api.Dockerfile
+      args: { API: monitoramento-motos }
+    image: concessionaria/motos
+    environment:
+      <<: *api-ambiente
+      MongoDb__StringConexao: mongodb://toxiproxy:27018/?directConnection=true&serverSelectionTimeoutMS=3000
+      Integracoes__RelatoriosApi: http://toxiproxy:8666/
+    depends_on:
+      otel-collector: { condition: service_started }
+      toxiproxy: { condition: service_started }
+      mongo: { condition: service_healthy }
+    ports:
+      - "127.0.0.1:5010:8080"
+
+  bff:
+    <<: *api
+    build:
+      context: .
+      dockerfile: docker/api.Dockerfile
+      args: { API: monitoramento-bff }
+    image: concessionaria/bff
+    environment:
+      <<: *api-ambiente
+      Integracoes__CarrosApi: http://carros:8080/
+      Integracoes__MotosApi: http://motos:8080/
+    depends_on:
+      - otel-collector
+      - carros
+      - motos
+    ports:
+      - "127.0.0.1:5101:8080"
+
+  web:
+    profiles: [app]
+    build:
+      context: .
+      dockerfile: docker/web.Dockerfile
+    image: concessionaria/web
+    depends_on:
+      - bff
+    # Mesma porta do "npm run dev": o CORS do BFF libera http://localhost:5173.
+    ports:
+      - "127.0.0.1:5173:80"
+    restart: unless-stopped
+
+  # ─── Ferramentas (perfil "ferramentas") ───────────────────────────────────────
+  # Gerador de tráfego e de carga, usado pelos cenários de falha:
+  #   docker compose run --rm k6 run /cenarios/k6/trafego.js
+  k6:
+    image: grafana/k6:2.3.0
+    profiles: [ferramentas]
+    volumes:
+      - ./cenarios:/cenarios:ro
+    environment:
+      # O k6 roda no Docker, mas chama o BFF pela porta do host: funciona com as APIs em contêiner ou no host.
+      BFF_URL: http://host.docker.internal:5101
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  tempo-dados:
+  loki-dados:
+  prometheus-dados:
+  grafana-dados:
+  mongo-dados:

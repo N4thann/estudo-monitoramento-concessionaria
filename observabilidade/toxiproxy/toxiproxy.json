@@ -1,0 +1,14 @@
+[
+  {
+    "name": "relatorios",
+    "listen": "0.0.0.0:8666",
+    "upstream": "relatorios:8080",
+    "enabled": true
+  },
+  {
+    "name": "mongo",
+    "listen": "0.0.0.0:27018",
+    "upstream": "mongo:27017",
+    "enabled": true
+  }
+]

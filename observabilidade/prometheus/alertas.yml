@@ -1,0 +1,109 @@
+# Regras de alerta das APIs da concessionária. Os "for" são curtos de propósito: é um ambiente de
+# demonstração, e o alerta precisa disparar poucos minutos depois de a falha ser injetada.
+# Severidade: "critica" = usuário afetado agora; "aviso" = degradação ou risco.
+groups:
+  - name: concessionaria-disponibilidade
+    rules:
+      - alert: ServicoFora
+        expr: up{job="concessionaria"} == 0
+        for: 30s
+        labels:
+          severidade: critica
+        annotations:
+          resumo: "API {{ $labels.servico }} fora do ar"
+          descricao: "O Prometheus não consegue ler o /metrics de {{ $labels.servico }} ({{ $labels.instance }}) há mais de 30 s."
+
+      - alert: TaxaErro5xxAlta
+        expr: |
+          (
+            sum by (servico) (rate(http_server_request_duration_seconds_count{job="concessionaria",http_route!~"/metrics|/saude",http_response_status_code=~"5.."}[2m]))
+            / sum by (servico) (rate(http_server_request_duration_seconds_count{job="concessionaria",http_route!~"/metrics|/saude"}[2m]))
+          ) > 0.05
+          # Volume mínimo: com 1 ou 2 requisições, um único erro já é 50–100%. 10 em 2 min = 1 a cada 12 s.
+          and on (servico) sum by (servico) (increase(http_server_request_duration_seconds_count{job="concessionaria",http_route!~"/metrics|/saude"}[2m])) >= 10
+        for: 1m
+        labels:
+          severidade: critica
+        annotations:
+          resumo: "Taxa de erro 5xx alta em {{ $labels.servico }}"
+          descricao: "{{ $value | humanizePercentage }} das respostas de {{ $labels.servico }} foram 5xx nos últimos 2 min (limite: 5%)."
+
+  - name: concessionaria-desempenho
+    rules:
+      - alert: LatenciaP95Alta
+        expr: |
+          histogram_quantile(0.95,
+            sum by (servico, le) (rate(http_server_request_duration_seconds_bucket{job="concessionaria",http_route!~"/metrics|/saude"}[2m]))
+          ) > 0.5
+          # Volume mínimo: com pouco tráfego, o p95 é a própria requisição mais lenta (por exemplo, a primeira
+          # planilha depois de subir, com o ClosedXML ainda "frio", leva ~1 s) e o alerta dispararia sem falha real.
+          and on (servico) sum by (servico) (increase(http_server_request_duration_seconds_count{job="concessionaria",http_route!~"/metrics|/saude"}[2m])) >= 10
+        for: 1m
+        labels:
+          severidade: aviso
+        annotations:
+          resumo: "Latência p95 acima de 500 ms em {{ $labels.servico }}"
+          descricao: "O p95 de {{ $labels.servico }} está em {{ $value | humanizeDuration }} (limite: 500 ms)."
+
+      - alert: CpuAlta
+        expr: |
+          sum by (servico) (rate(dotnet_process_cpu_time_seconds_total{job="concessionaria"}[2m]))
+          / on (servico) max by (servico) (dotnet_process_cpu_count{job="concessionaria"})
+          > 0.8
+        for: 2m
+        labels:
+          severidade: aviso
+        annotations:
+          resumo: "CPU acima de 80% em {{ $labels.servico }}"
+          descricao: "O processo de {{ $labels.servico }} está usando {{ $value | humanizePercentage }} da CPU disponível."
+
+      # concessionaria_processo_memoria_limite = limite do contêiner (cgroup) ou, com dotnet run, a RAM da máquina.
+      - alert: MemoriaAlta
+        expr: |
+          max by (servico) (dotnet_process_memory_working_set_bytes{job="concessionaria"})
+          / on (servico) max by (servico) (concessionaria_processo_memoria_limite_bytes{job="concessionaria"} > 0)
+          > 0.9
+        for: 1m
+        labels:
+          severidade: aviso
+        annotations:
+          resumo: "Memória acima de 90% do limite em {{ $labels.servico }}"
+          descricao: "{{ $labels.servico }} está usando {{ $value | humanizePercentage }} do limite de memória: risco de ser encerrado por falta de memória (OOM)."
+
+  - name: concessionaria-integracoes
+    rules:
+      # "increase > 0" sozinho não vê a primeira falha: o contador nasce já valendo 1. O "unless offset"
+      # pega a série que acabou de nascer, ou seja, que existe agora e não existia 2 min atrás.
+      # Ela precisa vir antes do "or": o increase() de uma série nova dá 0 e esconderia o valor dela.
+      - alert: FalhaIntegracaoRelatorios
+        expr: |
+          sum by (servico, operacao) (
+            (concessionaria_relatorios_falhas_integracao_total{job="concessionaria"} unless concessionaria_relatorios_falhas_integracao_total{job="concessionaria"} offset 2m)
+            or increase(concessionaria_relatorios_falhas_integracao_total{job="concessionaria"}[2m])
+          ) > 0
+        labels:
+          severidade: aviso
+        annotations:
+          resumo: "{{ $labels.servico }} não conseguiu falar com Relatórios ({{ $labels.operacao }})"
+          descricao: "{{ printf \"%.0f\" $value }} chamada(s) de {{ $labels.servico }} a Relatórios falharam nos últimos 2 min, mesmo após os retries."
+
+      - alert: PainelDegradado
+        expr: |
+          sum (
+            (concessionaria_painel_degradado_total{job="concessionaria"} unless concessionaria_painel_degradado_total{job="concessionaria"} offset 2m)
+            or increase(concessionaria_painel_degradado_total{job="concessionaria"}[2m])
+          ) > 0
+        labels:
+          severidade: aviso
+        annotations:
+          resumo: "Painel sendo exibido sem indicadores de vendas"
+          descricao: "{{ printf \"%.0f\" $value }} resposta(s) do /api/painel saíram sem indicadores nos últimos 2 min (Relatórios indisponível)."
+
+      - alert: RetriesFrequentes
+        expr: |
+          sum by (servico, pipeline_name) (increase(resilience_polly_strategy_events_total{job="concessionaria",event_name="OnRetry"}[2m])) > 10
+        labels:
+          severidade: aviso
+        annotations:
+          resumo: "Muitos retries de {{ $labels.servico }} em {{ $labels.pipeline_name }}"
+          descricao: "{{ printf \"%.0f\" $value }} retries nos últimos 2 min: a dependência está instável, mesmo que as requisições ainda funcionem."
