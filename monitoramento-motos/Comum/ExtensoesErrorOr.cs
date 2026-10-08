@@ -2,8 +2,13 @@ using ErrorOr;
 
 namespace Concessionaria.Motos.Comum;
 
+/// <summary>Conversão dos erros de negócio (<see cref="Error"/>) em resposta HTTP com ProblemDetails.</summary>
 public static class ExtensoesErrorOr
 {
+    /// <summary>
+    /// Só erros de validação viram 400 com os erros agrupados por campo (<c>errors</c>). Nos demais casos vale o
+    /// primeiro erro: NotFound 404, Conflict 409, Failure 502 e qualquer outro 500, com o código em <c>codigo</c>.
+    /// </summary>
     public static IResult ParaRespostaHttp(this List<Error> erros)
     {
         if (erros.All(e => e.Type == ErrorType.Validation))

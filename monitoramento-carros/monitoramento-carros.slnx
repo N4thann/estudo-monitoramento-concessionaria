@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="monitoramento-carros.csproj" />
+  <Project Path="../monitoramento-carros.tests/monitoramento-carros.tests.csproj" />
 </Solution>

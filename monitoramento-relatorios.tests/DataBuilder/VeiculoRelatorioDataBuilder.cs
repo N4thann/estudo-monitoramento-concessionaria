@@ -1,5 +1,5 @@
 using Bogus;
-using Concessionaria.Relatorios.Contratos;
+using Concessionaria.Relatorios.Aplicacao.Features.Planilhas.Contratos;
 
 namespace Concessionaria.Relatorios.tests.DataBuilder
 {

@@ -4,8 +4,6 @@ using Concessionaria.Relatorios.Comum.Observabilidade;
 
 namespace Concessionaria.Relatorios.tests.Common.Observabilidade
 {
-    public record MedicaoColetada(string Instrumento, double Valor, IReadOnlyDictionary<string, object?> Tags);
-
     /// <summary>
     /// Escuta as métricas e os spans próprios de Relatórios (<see cref="Telemetria"/>) durante um teste.
     /// Os instrumentos são estáticos, então quem usa precisa estar na <see cref="ColecaoTelemetria"/> para não
@@ -18,6 +16,7 @@ namespace Concessionaria.Relatorios.tests.Common.Observabilidade
         private readonly List<MedicaoColetada> _medicoes = [];
         private readonly List<Activity> _spans = [];
 
+        /// <summary>Começa a escutar o medidor e a fonte de spans de <see cref="Telemetria"/>.</summary>
         public ColetorTelemetria()
         {
             _ouvinteMetricas.InstrumentPublished = (instrumento, ouvinte) =>
@@ -38,16 +37,22 @@ namespace Concessionaria.Relatorios.tests.Common.Observabilidade
             ActivitySource.AddActivityListener(_ouvinteSpans);
         }
 
+        /// <summary>Medições já capturadas de um instrumento, pelo nome.</summary>
         public IReadOnlyList<MedicaoColetada> Medicoes(string instrumento)
         {
             lock (_medicoes) return _medicoes.Where(m => m.Instrumento == instrumento).ToList();
         }
 
+        /// <summary>Spans de <see cref="Telemetria.Fonte"/> já encerrados.</summary>
         public IReadOnlyList<Activity> Spans
         {
             get { lock (_spans) return _spans.ToList(); }
         }
 
+        /// <summary>Lê os instrumentos observáveis (gauges), como o Prometheus faria a cada scrape.</summary>
+        public void ObservarInstrumentos() => _ouvinteMetricas.RecordObservableInstruments();
+
+        /// <summary>Guarda uma medição com cópia das tags, que só valem durante o callback.</summary>
         private void Registrar(Instrument instrumento, double valor, ReadOnlySpan<KeyValuePair<string, object?>> tags)
         {
             var copiaTags = new Dictionary<string, object?>();
@@ -55,17 +60,11 @@ namespace Concessionaria.Relatorios.tests.Common.Observabilidade
             lock (_medicoes) _medicoes.Add(new MedicaoColetada(instrumento.Name, valor, copiaTags));
         }
 
+        /// <summary>Para de escutar métricas e spans.</summary>
         public void Dispose()
         {
             _ouvinteMetricas.Dispose();
             _ouvinteSpans.Dispose();
         }
-    }
-
-    /// <summary>Testes que medem a telemetria estática rodam isolados, fora da execução paralela.</summary>
-    [CollectionDefinition(Nome, DisableParallelization = true)]
-    public class ColecaoTelemetria
-    {
-        public const string Nome = "Telemetria";
     }
 }

@@ -1,14 +1,16 @@
 using System.Diagnostics;
 using Concessionaria.Relatorios.Comum.Observabilidade;
+using Concessionaria.Relatorios.tests.Fakes.Http;
+using Concessionaria.Relatorios.tests.Fakes.Logging;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
 using Serilog;
-using Serilog.Core;
 using Serilog.Events;
 using Shouldly;
 
 namespace Concessionaria.Relatorios.tests.Common.Observabilidade
 {
+    /// <summary>Id de operação na borda: reaproveitado ou gerado, devolvido na resposta, no span e nos logs.</summary>
     public class MiddlewareIdOperacaoTests
     {
         private readonly RespostaHttpFalsa _resposta;
@@ -17,6 +19,7 @@ namespace Concessionaria.Relatorios.tests.Common.Observabilidade
         private int _chamadasAoProximo;
         private readonly MiddlewareIdOperacao _sut;
 
+        /// <summary>Monta o middleware com um próximo passo que registra o Id visto.</summary>
         public MiddlewareIdOperacaoTests()
         {
             _resposta = new RespostaHttpFalsa();
@@ -148,26 +151,6 @@ namespace Concessionaria.Relatorios.tests.Common.Observabilidade
             // Assert
             coletor.Eventos[0].Properties[ContextoOperacao.PropriedadeLog].ShouldBe(new ScalarValue("id-vindo-do-bff"));
             coletor.Eventos[1].Properties.ContainsKey(ContextoOperacao.PropriedadeLog).ShouldBeFalse();
-        }
-
-        /// <summary>O DefaultHttpContext não dispara OnStarting: esta resposta guarda os callbacks para o teste disparar.</summary>
-        private sealed class RespostaHttpFalsa : HttpResponseFeature
-        {
-            private readonly List<(Func<object, Task> Callback, object Estado)> _aoIniciar = [];
-
-            public override void OnStarting(Func<object, Task> callback, object state) => _aoIniciar.Add((callback, state));
-
-            public async Task IniciarAsync()
-            {
-                foreach (var (callback, estado) in _aoIniciar)
-                    await callback(estado);
-            }
-        }
-
-        private sealed class ColetorLogs : ILogEventSink
-        {
-            public List<LogEvent> Eventos { get; } = [];
-            public void Emit(LogEvent logEvent) => Eventos.Add(logEvent);
         }
     }
 }

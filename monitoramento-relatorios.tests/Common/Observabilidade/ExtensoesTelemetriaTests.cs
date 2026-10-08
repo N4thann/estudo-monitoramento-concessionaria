@@ -5,6 +5,7 @@ using Shouldly;
 
 namespace Concessionaria.Relatorios.tests.Common.Observabilidade
 {
+    /// <summary>Filtro de rotas de infraestrutura e leitura da seção Telemetria.</summary>
     public class ExtensoesTelemetriaTests
     {
         [Theory(DisplayName = "SUCESSO - Deve reconhecer métricas e saúde como rotas de infraestrutura")]

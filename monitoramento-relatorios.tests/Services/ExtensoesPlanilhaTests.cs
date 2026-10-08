@@ -1,5 +1,5 @@
 using ClosedXML.Excel;
-using Concessionaria.Relatorios.Servicos;
+using Concessionaria.Relatorios.Aplicacao.Features.Planilhas.Excel;
 using Shouldly;
 
 namespace Concessionaria.Relatorios.tests.Services

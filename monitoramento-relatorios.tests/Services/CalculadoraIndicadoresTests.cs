@@ -1,5 +1,5 @@
-using Concessionaria.Relatorios.Contratos;
-using Concessionaria.Relatorios.Servicos;
+using Concessionaria.Relatorios.Aplicacao.Comum.Contratos;
+using Concessionaria.Relatorios.Aplicacao.Features.Indicadores;
 using Concessionaria.Relatorios.tests.DataBuilder;
 using Microsoft.Extensions.Logging;
 using NSubstitute;

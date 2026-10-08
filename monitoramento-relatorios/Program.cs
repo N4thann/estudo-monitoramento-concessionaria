@@ -1,6 +1,6 @@
 using Carter;
+using Concessionaria.Relatorios.Aplicacao;
 using Concessionaria.Relatorios.Comum.Observabilidade;
-using Concessionaria.Relatorios.Servicos;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +10,7 @@ builder.AdicionarTelemetria("relatorios");
 builder.Services.AddOpenApi();
 builder.Services.AdicionarProblemDetails();
 
-builder.Services.AddSingleton<CalculadoraIndicadores>();
-builder.Services.AddSingleton<GeradorPlanilhas>();
+builder.Services.AdicionarAplicacao();
 
 builder.Services.AddHealthChecks();
 builder.Services.AddCarter();

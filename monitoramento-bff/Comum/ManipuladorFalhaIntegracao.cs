@@ -5,10 +5,16 @@ using Refit;
 
 namespace Concessionaria.Bff.Comum;
 
-// Falha de comunicação com outro serviço vira 502/503/504 (e não 500 genérico), para diferenciar
-// "esta API quebrou" de "um serviço que ela chama está fora" nos logs e nas métricas.
+/// <summary>
+/// Falha de comunicação com outro serviço vira 502/503/504 (e não 500 genérico), para diferenciar
+/// "esta API quebrou" de "um serviço que ela chama está fora" nos logs e nas métricas.
+/// </summary>
 public class ManipuladorFalhaIntegracao(IProblemDetailsService problemDetailsService, ILogger<ManipuladorFalhaIntegracao> logger) : IExceptionHandler
 {
+    /// <summary>
+    /// Circuito aberto vira 503, timeout 504 e falha de conexão 502. Qualquer outra exceção não é tratada aqui
+    /// (devolve falso) e segue para o tratamento padrão (500).
+    /// </summary>
     public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
     {
         // O Refit embrulha falhas de rede/resiliência em ApiRequestException; a causa real fica em InnerException.

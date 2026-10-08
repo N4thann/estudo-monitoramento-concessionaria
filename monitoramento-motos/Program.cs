@@ -1,10 +1,10 @@
 using System.Text.Json.Serialization;
 using Carter;
+using Concessionaria.Motos.Aplicacao;
 using Concessionaria.Motos.Comum;
 using Concessionaria.Motos.Comum.Observabilidade;
-using Concessionaria.Motos.Dados;
-using Concessionaria.Motos.Integracoes;
-using Concessionaria.Motos.Servicos;
+using Concessionaria.Motos.Infraestrutura;
+using Concessionaria.Motos.Infraestrutura.Banco;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,9 +19,7 @@ builder.Services.ConfigureHttpJsonOptions(opcoes =>
 
 builder.Services.AdicionarMongoDb(builder.Configuration);
 builder.Services.AdicionarIntegracoes(builder.Configuration);
-builder.Services.AddScoped<ServicoMotos>();
-builder.Services.AddScoped<ServicoVendas>();
-builder.Services.AddScoped<ServicoRelatorios>();
+builder.Services.AdicionarAplicacao();
 
 builder.Services.AddHealthChecks().AddCheck<VerificacaoSaudeMongoDb>("mongodb");
 builder.Services.AddCarter();

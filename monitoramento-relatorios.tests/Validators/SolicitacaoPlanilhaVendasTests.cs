@@ -1,4 +1,4 @@
-using Concessionaria.Relatorios.Contratos;
+using Concessionaria.Relatorios.Aplicacao.Features.Planilhas.Contratos;
 using Concessionaria.Relatorios.tests.DataBuilder;
 using Shouldly;
 

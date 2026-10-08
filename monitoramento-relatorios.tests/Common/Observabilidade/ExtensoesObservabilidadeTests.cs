@@ -7,16 +7,19 @@ using Shouldly;
 
 namespace Concessionaria.Relatorios.tests.Common.Observabilidade
 {
+    /// <summary>Id de operação incluído em todo ProblemDetails.</summary>
     public class ExtensoesObservabilidadeTests
     {
         private readonly ProblemDetailsOptions _opcoes;
 
+        /// <summary>Lê as opções de ProblemDetails registradas pela extensão.</summary>
         public ExtensoesObservabilidadeTests()
         {
             using var provedor = new ServiceCollection().AdicionarProblemDetails().BuildServiceProvider();
             _opcoes = provedor.GetRequiredService<IOptions<ProblemDetailsOptions>>().Value;
         }
 
+        /// <summary>Aplica a customização registrada a um ProblemDetails vazio.</summary>
         private ProblemDetails Customizar()
         {
             var contexto = new ProblemDetailsContext { HttpContext = new DefaultHttpContext(), ProblemDetails = new ProblemDetails() };

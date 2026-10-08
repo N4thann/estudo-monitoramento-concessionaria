@@ -3,10 +3,15 @@ using Serilog.Context;
 
 namespace Concessionaria.Carros.Comum.Observabilidade;
 
+/// <summary>
+/// Primeiro middleware do pipeline: define o Id de operação da requisição, devolve-o no cabeçalho da resposta
+/// e o coloca em todo log e no span do servidor.
+/// </summary>
 public class MiddlewareIdOperacao(RequestDelegate proximo)
 {
     private const int TamanhoMaximo = 64;
 
+    /// <summary>Usa o Id recebido no cabeçalho, ou gera um novo se ele vier vazio ou com mais de 64 caracteres.</summary>
     public async Task InvokeAsync(HttpContext contexto)
     {
         var idOperacao = contexto.Request.Headers[ContextoOperacao.Cabecalho].FirstOrDefault();
@@ -14,7 +19,7 @@ public class MiddlewareIdOperacao(RequestDelegate proximo)
             idOperacao = Guid.NewGuid().ToString("N");
 
         ContextoOperacao.IdAtual = idOperacao;
-        // Liga o Id de operação ao trace: dá para buscar no Tempo/Jaeger pelo mesmo id que aparece no log e no erro.
+        // Liga o Id de operação ao trace: dá para buscar no Tempo pelo mesmo id que aparece no log e no erro.
         Activity.Current?.SetTag("concessionaria.id_operacao", idOperacao);
         contexto.Response.OnStarting(() =>
         {
