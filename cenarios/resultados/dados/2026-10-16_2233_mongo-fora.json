@@ -1,0 +1,1151 @@
+{
+    "Cenario":  "mongo-fora",
+    "Parametros":  {
+                       "DuracaoFalhaSegundos":  150,
+                       "LatenciaMs":  4000,
+                       "CargaAlvo":  350,
+                       "Taxa":  5
+                   },
+    "Detalhe":  null,
+    "T0":  "2026-10-17T01:33:26.5611161+00:00",
+    "T1":  "2026-10-17T01:35:57.1963927+00:00",
+    "T2":  "2026-10-17T01:38:24.8057673+00:00",
+    "Alertas":  [
+                    {
+                        "Alerta":  "TaxaErro5xxAlta",
+                        "Alvo":  "bff",
+                        "Severidade":  "critica",
+                        "Descricao":  "76.25% das respostas de bff foram 5xx nos últimos 2 min (limite: 5%).",
+                        "Pendente":  "2026-10-17T01:33:56.4232825+00:00",
+                        "Disparou":  "2026-10-17T01:35:12.1028887+00:00",
+                        "Resolveu":  "2026-10-17T01:38:12.7468488+00:00"
+                    },
+                    {
+                        "Alerta":  "LatenciaP95Alta",
+                        "Alvo":  "motos",
+                        "Severidade":  "aviso",
+                        "Descricao":  "O p95 de motos está em 4.837s (limite: 500 ms).",
+                        "Pendente":  "2026-10-17T01:34:04.0170343+00:00",
+                        "Disparou":  "2026-10-17T01:35:22.0951170+00:00",
+                        "Resolveu":  "2026-10-17T01:38:22.7946185+00:00"
+                    },
+                    {
+                        "Alerta":  "LatenciaP95Alta",
+                        "Alvo":  "carros",
+                        "Severidade":  "aviso",
+                        "Descricao":  "O p95 de carros está em 4.854s (limite: 500 ms).",
+                        "Pendente":  "2026-10-17T01:34:04.0170343+00:00",
+                        "Disparou":  "2026-10-17T01:35:22.0961170+00:00",
+                        "Resolveu":  "2026-10-17T01:38:07.6224184+00:00"
+                    },
+                    {
+                        "Alerta":  "TaxaErro5xxAlta",
+                        "Alvo":  "motos",
+                        "Severidade":  "critica",
+                        "Descricao":  "75.22% das respostas de motos foram 5xx nos últimos 2 min (limite: 5%).",
+                        "Pendente":  "2026-10-17T01:33:56.4232825+00:00",
+                        "Disparou":  "2026-10-17T01:35:12.1048906+00:00",
+                        "Resolveu":  "2026-10-17T01:38:12.7478847+00:00"
+                    },
+                    {
+                        "Alerta":  "TaxaErro5xxAlta",
+                        "Alvo":  "carros",
+                        "Severidade":  "critica",
+                        "Descricao":  "86.66% das respostas de carros foram 5xx nos últimos 2 min (limite: 5%).",
+                        "Pendente":  "2026-10-17T01:34:11.4232825+00:00",
+                        "Disparou":  "2026-10-17T01:35:27.2269142+00:00",
+                        "Resolveu":  "2026-10-17T01:38:12.7489436+00:00"
+                    },
+                    {
+                        "Alerta":  "LatenciaP95Alta",
+                        "Alvo":  "bff",
+                        "Severidade":  "aviso",
+                        "Descricao":  "O p95 de bff está em 4.838s (limite: 500 ms).",
+                        "Pendente":  "2026-10-17T01:34:04.0170343+00:00",
+                        "Disparou":  "2026-10-17T01:35:22.0941129+00:00",
+                        "Resolveu":  "2026-10-17T01:38:22.7956740+00:00"
+                    }
+                ],
+    "Sondas":  [
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-1",
+                       "Inicio":  "2026-10-17T01:33:27.0671387+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3081
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-2",
+                       "Inicio":  "2026-10-17T01:33:27.0676721+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3081
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-3",
+                       "Inicio":  "2026-10-17T01:33:32.1932957+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3097
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-4",
+                       "Inicio":  "2026-10-17T01:33:32.1942963+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3097
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-5",
+                       "Inicio":  "2026-10-17T01:33:37.1235202+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3067
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-6",
+                       "Inicio":  "2026-10-17T01:33:37.1240535+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3066
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-7",
+                       "Inicio":  "2026-10-17T01:33:42.2466200+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3067
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-8",
+                       "Inicio":  "2026-10-17T01:33:42.2469449+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3067
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-9",
+                       "Inicio":  "2026-10-17T01:33:47.1470920+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3085
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-10",
+                       "Inicio":  "2026-10-17T01:33:47.1475031+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3085
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-11",
+                       "Inicio":  "2026-10-17T01:33:52.0818098+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3090
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-12",
+                       "Inicio":  "2026-10-17T01:33:52.0828109+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3089
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-13",
+                       "Inicio":  "2026-10-17T01:33:57.1951940+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3072
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-14",
+                       "Inicio":  "2026-10-17T01:33:57.1951940+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3072
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-15",
+                       "Inicio":  "2026-10-17T01:34:02.1059488+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3054
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-16",
+                       "Inicio":  "2026-10-17T01:34:02.1064799+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3054
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-17",
+                       "Inicio":  "2026-10-17T01:34:07.2180874+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3076
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-18",
+                       "Inicio":  "2026-10-17T01:34:07.2180874+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3077
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-19",
+                       "Inicio":  "2026-10-17T01:34:12.1118679+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3068
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-20",
+                       "Inicio":  "2026-10-17T01:34:12.1123862+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3067
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-21",
+                       "Inicio":  "2026-10-17T01:34:17.2099868+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3067
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-22",
+                       "Inicio":  "2026-10-17T01:34:17.2106974+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3066
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-23",
+                       "Inicio":  "2026-10-17T01:34:22.1385257+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3052
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-24",
+                       "Inicio":  "2026-10-17T01:34:22.1392556+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3051
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-25",
+                       "Inicio":  "2026-10-17T01:34:27.2488245+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3082
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-26",
+                       "Inicio":  "2026-10-17T01:34:27.2497415+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3081
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-27",
+                       "Inicio":  "2026-10-17T01:34:32.2036458+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3050
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-28",
+                       "Inicio":  "2026-10-17T01:34:32.2047034+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3049
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-29",
+                       "Inicio":  "2026-10-17T01:34:37.1113494+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3055
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-30",
+                       "Inicio":  "2026-10-17T01:34:37.1117695+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3055
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-31",
+                       "Inicio":  "2026-10-17T01:34:42.2045991+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3066
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-32",
+                       "Inicio":  "2026-10-17T01:34:42.2055806+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3066
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-33",
+                       "Inicio":  "2026-10-17T01:34:47.1250309+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3083
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-34",
+                       "Inicio":  "2026-10-17T01:34:47.1260282+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3082
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-35",
+                       "Inicio":  "2026-10-17T01:34:52.2659622+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3056
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-36",
+                       "Inicio":  "2026-10-17T01:34:52.2667103+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3055
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-37",
+                       "Inicio":  "2026-10-17T01:34:57.1452541+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3109
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-38",
+                       "Inicio":  "2026-10-17T01:34:57.1462522+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3108
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-39",
+                       "Inicio":  "2026-10-17T01:35:02.0894067+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3056
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-40",
+                       "Inicio":  "2026-10-17T01:35:02.0904048+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3055
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-41",
+                       "Inicio":  "2026-10-17T01:35:07.1843289+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3053
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-42",
+                       "Inicio":  "2026-10-17T01:35:07.1853204+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3052
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-43",
+                       "Inicio":  "2026-10-17T01:35:12.0886702+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3077
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-44",
+                       "Inicio":  "2026-10-17T01:35:12.0890721+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3076
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-45",
+                       "Inicio":  "2026-10-17T01:35:17.1953474+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3065
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-46",
+                       "Inicio":  "2026-10-17T01:35:17.1962699+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3064
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-47",
+                       "Inicio":  "2026-10-17T01:35:22.0800060+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3096
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-48",
+                       "Inicio":  "2026-10-17T01:35:22.0813568+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3095
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-49",
+                       "Inicio":  "2026-10-17T01:35:27.2135633+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3093
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-50",
+                       "Inicio":  "2026-10-17T01:35:27.2145414+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3093
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-51",
+                       "Inicio":  "2026-10-17T01:35:32.1456717+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3079
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-52",
+                       "Inicio":  "2026-10-17T01:35:32.1466305+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3079
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-53",
+                       "Inicio":  "2026-10-17T01:35:37.2517543+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3096
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-54",
+                       "Inicio":  "2026-10-17T01:35:37.2521522+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3096
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-55",
+                       "Inicio":  "2026-10-17T01:35:42.2322410+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3095
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-56",
+                       "Inicio":  "2026-10-17T01:35:42.2332463+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3094
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-57",
+                       "Inicio":  "2026-10-17T01:35:47.1757768+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3079
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-58",
+                       "Inicio":  "2026-10-17T01:35:47.1763148+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3079
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-59",
+                       "Inicio":  "2026-10-17T01:35:52.1088181+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3051
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-60",
+                       "Inicio":  "2026-10-17T01:35:52.1095073+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3051
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-61",
+                       "Inicio":  "2026-10-17T01:35:57.5933957+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3107
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-62",
+                       "Inicio":  "2026-10-17T01:35:57.5939419+00:00",
+                       "Status":  502,
+                       "Ok":  false,
+                       "Detalhe":  "",
+                       "Ms":  3106
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-63",
+                       "Inicio":  "2026-10-17T01:36:02.7246245+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  22
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-64",
+                       "Inicio":  "2026-10-17T01:36:02.7256060+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  21
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-65",
+                       "Inicio":  "2026-10-17T01:36:07.6397847+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-66",
+                       "Inicio":  "2026-10-17T01:36:07.6407152+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  15
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-67",
+                       "Inicio":  "2026-10-17T01:36:12.7455505+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  17
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-68",
+                       "Inicio":  "2026-10-17T01:36:12.7465494+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-69",
+                       "Inicio":  "2026-10-17T01:36:17.6380199+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-70",
+                       "Inicio":  "2026-10-17T01:36:17.6390161+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  15
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-71",
+                       "Inicio":  "2026-10-17T01:36:22.7428541+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  17
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-72",
+                       "Inicio":  "2026-10-17T01:36:22.7438521+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-73",
+                       "Inicio":  "2026-10-17T01:36:27.6260592+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-74",
+                       "Inicio":  "2026-10-17T01:36:27.6270648+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  15
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-75",
+                       "Inicio":  "2026-10-17T01:36:32.7273401+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-76",
+                       "Inicio":  "2026-10-17T01:36:32.7283403+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  15
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-77",
+                       "Inicio":  "2026-10-17T01:36:37.6344376+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  17
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-78",
+                       "Inicio":  "2026-10-17T01:36:37.6354430+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-79",
+                       "Inicio":  "2026-10-17T01:36:42.7524461+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  17
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-80",
+                       "Inicio":  "2026-10-17T01:36:42.7531587+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-81",
+                       "Inicio":  "2026-10-17T01:36:47.6879428+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  18
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-82",
+                       "Inicio":  "2026-10-17T01:36:47.6889071+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  17
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-83",
+                       "Inicio":  "2026-10-17T01:36:52.6129358+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-84",
+                       "Inicio":  "2026-10-17T01:36:52.6134232+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-85",
+                       "Inicio":  "2026-10-17T01:36:57.7340115+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  17
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-86",
+                       "Inicio":  "2026-10-17T01:36:57.7350204+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-87",
+                       "Inicio":  "2026-10-17T01:37:02.6283531+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-88",
+                       "Inicio":  "2026-10-17T01:37:02.6287512+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  15
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-89",
+                       "Inicio":  "2026-10-17T01:37:07.7510921+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  17
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-90",
+                       "Inicio":  "2026-10-17T01:37:07.7520898+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-91",
+                       "Inicio":  "2026-10-17T01:37:12.6587617+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  17
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-92",
+                       "Inicio":  "2026-10-17T01:37:12.6597622+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-93",
+                       "Inicio":  "2026-10-17T01:37:17.7738420+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-94",
+                       "Inicio":  "2026-10-17T01:37:17.7743709+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-95",
+                       "Inicio":  "2026-10-17T01:37:22.7270023+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  19
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-96",
+                       "Inicio":  "2026-10-17T01:37:22.7280096+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  19
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-97",
+                       "Inicio":  "2026-10-17T01:37:27.6854730+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  17
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-98",
+                       "Inicio":  "2026-10-17T01:37:27.6864714+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-99",
+                       "Inicio":  "2026-10-17T01:37:32.6040608+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  15
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-100",
+                       "Inicio":  "2026-10-17T01:37:32.6040608+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  15
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-101",
+                       "Inicio":  "2026-10-17T01:37:37.7198300+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-102",
+                       "Inicio":  "2026-10-17T01:37:37.7202819+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-103",
+                       "Inicio":  "2026-10-17T01:37:42.6643404+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  17
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-104",
+                       "Inicio":  "2026-10-17T01:37:42.6653389+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-105",
+                       "Inicio":  "2026-10-17T01:37:47.7704300+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  17
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-106",
+                       "Inicio":  "2026-10-17T01:37:47.7709551+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-107",
+                       "Inicio":  "2026-10-17T01:37:52.6619077+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-108",
+                       "Inicio":  "2026-10-17T01:37:52.6623694+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-109",
+                       "Inicio":  "2026-10-17T01:37:57.6080140+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-110",
+                       "Inicio":  "2026-10-17T01:37:57.6086036+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-111",
+                       "Inicio":  "2026-10-17T01:38:02.7121651+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-112",
+                       "Inicio":  "2026-10-17T01:38:02.7125808+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  16
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-113",
+                       "Inicio":  "2026-10-17T01:38:07.6059761+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  19
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-114",
+                       "Inicio":  "2026-10-17T01:38:07.6064025+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  19
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-115",
+                       "Inicio":  "2026-10-17T01:38:12.7328478+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  18
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-116",
+                       "Inicio":  "2026-10-17T01:38:12.7338444+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  17
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-117",
+                       "Inicio":  "2026-10-17T01:38:17.6556341+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  15
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-118",
+                       "Inicio":  "2026-10-17T01:38:17.6566413+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  14
+                   },
+                   {
+                       "Alvo":  "painel",
+                       "Id":  "sonda-mongo-fora-painel-119",
+                       "Inicio":  "2026-10-17T01:38:22.7792488+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  2026
+                   },
+                   {
+                       "Alvo":  "planilha",
+                       "Id":  "sonda-mongo-fora-planilha-120",
+                       "Inicio":  "2026-10-17T01:38:22.7799022+00:00",
+                       "Status":  200,
+                       "Ok":  true,
+                       "Detalhe":  "",
+                       "Ms":  2025
+                   }
+               ]
+}

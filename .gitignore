@@ -7,5 +7,6 @@ node_modules/
 dist/
 .env
 
-# Documentação e anotações locais (não vão para o repositório)
+# Documentação e anotações locais (não vão para o repositório), exceto o README da raiz
 *.md
+!/README.md
