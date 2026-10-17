@@ -61,12 +61,12 @@ public static class ExtensoesInfraestrutura
 
         // As chamadas a Relatórios são cálculos sem efeito colateral, então o retry vale também para POST.
         services.AddRefitGeneratedClient<IRelatoriosApi>(ConfiguracaoRefit, httpClientName: "relatorios")
-            .ConfigureHttpClient(cliente => cliente.BaseAddress = new Uri(configuracao.RelatoriosApi))
-            .AddHttpMessageHandler<PropagadorIdOperacaoHandler>()
-            .AddStandardResilienceHandler(opcoes =>
+            .ConfigureHttpClient(cliente => cliente.BaseAddress = new Uri(configuracao.RelatoriosApi))   // http://127.0.0.1:5051/
+            .AddHttpMessageHandler<PropagadorIdOperacaoHandler>()                                        // handler 1
+            .AddStandardResilienceHandler(opcoes =>                                                      // handler 2
             {
-                opcoes.AttemptTimeout.Timeout = TimeSpan.FromSeconds(configuracao.TimeoutTentativaSegundos);
-                opcoes.TotalRequestTimeout.Timeout = TimeSpan.FromSeconds(configuracao.TimeoutTotalSegundos);
+                opcoes.AttemptTimeout.Timeout = TimeSpan.FromSeconds(configuracao.TimeoutTentativaSegundos);    // 3s por tentativa
+                opcoes.TotalRequestTimeout.Timeout = TimeSpan.FromSeconds(configuracao.TimeoutTotalSegundos);   // 8s no total
                 opcoes.CircuitBreaker.SamplingDuration = TimeSpan.FromSeconds(Math.Max(30, configuracao.TimeoutTentativaSegundos * 2));
             });
 

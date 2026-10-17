@@ -31,7 +31,7 @@ public class ServicoRelatorios(
             new SolicitacaoIndicadoresVendas(vendas.Select(ParaVendaRelatorio).ToList()), ct);
 
         if (resposta.IsSuccessStatusCode && resposta.Content is not null)
-            return resposta.Content;
+            return resposta.Content;   // caminho feliz
 
         // StatusCode nulo = a requisição nem chegou a ter resposta (conexão recusada, timeout, circuito aberto).
         logger.LogWarning(resposta.Error,
@@ -39,7 +39,7 @@ public class ServicoRelatorios(
             (int?)resposta.StatusCode);
 
         Telemetria.FalhasRelatorios.Add(1, Telemetria.TagTipoVeiculo, new KeyValuePair<string, object?>("operacao", "indicadores"));
-        return null;
+        return null;                   // degradação: resumo sem indicadores
     }
 
     /// <summary>Gera a planilha de vendas do período: padrão últimos 30 dias, máximo <see cref="ErrosRelatorio.PeriodoMaximoDias"/>.</summary>

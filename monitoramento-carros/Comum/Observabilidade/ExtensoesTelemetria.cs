@@ -31,34 +31,36 @@ public static class ExtensoesTelemetria
         Telemetria.CriarMedidorLimiteMemoria();
 
         builder.Services.AddOpenTelemetry()
+            // Resource: "quem sou eu" — vai junto de todo span e métrica.
             .ConfigureResource(recurso => recurso
                 .AddService(serviceName: nomeServico, serviceNamespace: "concessionaria", serviceVersion: "1.0.0")
                 .AddAttributes([new KeyValuePair<string, object>("deployment.environment.name", builder.Environment.EnvironmentName)]))
             .WithTracing(tracing =>
             {
                 tracing
-                    .AddSource(Telemetria.Nome)
-                    .AddSource("MongoDB.Driver")
+                    .AddSource(Telemetria.Nome)    // spans próprios do serviço ("Consultar estoque e vendas")
+                    .AddSource("MongoDB.Driver")   // spans nativos do driver do Mongo
                     .AddAspNetCoreInstrumentation(opcoes =>
                     {
+                        // /metrics e /saude não viram trace: são chamadas de infraestrutura, não de usuário.
                         opcoes.Filter = contexto => !EhRotaInfraestrutura(contexto.Request.Path);
-                        opcoes.RecordException = true;
+                        opcoes.RecordException = true;   // exceção vira evento dentro do span
                     })
                     .AddHttpClientInstrumentation(opcoes => opcoes.RecordException = true)
-                    .AddOtlpExporter(opcoes => opcoes.Endpoint = new Uri(configuracao.EndpointOtlp));
+                    .AddOtlpExporter(opcoes => opcoes.Endpoint = new Uri(configuracao.EndpointOtlp));   // → Collector :4317
 
                 if (configuracao.ExportarTracesNoConsole)
-                    tracing.AddConsoleExporter();
+                    tracing.AddConsoleExporter();   // modo estudo: imprime os spans no console
             })
             .WithMetrics(metricas => metricas
-                .AddMeter(Telemetria.Nome)
-                .AddAspNetCoreInstrumentation()
-                .AddHttpClientInstrumentation()
+                .AddMeter(Telemetria.Nome)        // métricas de negócio
+                .AddAspNetCoreInstrumentation()   // http.server.request.duration
+                .AddHttpClientInstrumentation()   // http.client.request.duration
                 // CPU, memória, GC e threads do processo (medidor nativo do .NET).
                 .AddMeter("System.Runtime")
                 // Retries, timeouts e circuito aberto do AddStandardResilienceHandler.
                 .AddMeter("Polly")
-                .AddPrometheusExporter());
+                .AddPrometheusExporter());        // publica em /metrics
 
         return builder;
     }

@@ -10,9 +10,9 @@ public static class Telemetria
     public const string Nome = "Concessionaria.Bff";
 
     /// <summary>Fonte dos spans próprios.</summary>
-    public static readonly ActivitySource Fonte = new(Nome);
+    public static readonly ActivitySource Fonte = new(Nome);   // assinada no AddSource(Telemetria.Nome)
 
-    private static readonly Meter Medidor = new(Nome);
+    private static readonly Meter Medidor = new(Nome);         // assinado no AddMeter(Telemetria.Nome)
 
     /// <summary>
     /// Cria o gauge do limite de memória do processo: o do contêiner ou, fora dele, a RAM da máquina. Com ele o uso

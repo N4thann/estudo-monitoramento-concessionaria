@@ -112,13 +112,13 @@ public class ServicoCarros(
         // Span próprio separa, no trace, a etapa local (Mongo) da etapa remota (Relatórios).
         Task<IReadOnlyDictionary<SituacaoVeiculo, TotaisEstoque>> totaisTask;
         Task<IReadOnlyList<Venda>> vendasTask;
-        using (var etapa = Telemetria.Fonte.StartActivity("Consultar estoque e vendas"))
+        using (var etapa = Telemetria.Fonte.StartActivity("Consultar estoque e vendas"))   // abre span Internal
         {
-            totaisTask = repositorioCarros.ObterTotaisPorSituacaoAsync(ct);
-            vendasTask = repositorioVendas.ListarPorPeriodoAsync(null, null, ct);
+            totaisTask = repositorioCarros.ObterTotaisPorSituacaoAsync(ct);               // aggregate em "carros"
+            vendasTask = repositorioVendas.ListarPorPeriodoAsync(null, null, ct);         // find em "vendas"
             await Task.WhenAll(totaisTask, vendasTask);
-            etapa?.SetTag("concessionaria.quantidade_vendas", vendasTask.Result.Count);
-        }
+            etapa?.SetTag("concessionaria.quantidade_vendas", vendasTask.Result.Count);   // atributo de negócio
+        }                                                                                 // fecha o span aqui
 
         var totais = totaisTask.Result;
         var disponiveis = totais.GetValueOrDefault(SituacaoVeiculo.Disponivel) ?? new TotaisEstoque(0, 0m);

@@ -17,18 +17,19 @@ public static class ExtensoesObservabilidade
         var endpointOtlp = builder.Configuration.ObterConfiguracaoTelemetria().EndpointOtlp;
 
         builder.Services.AddSerilog((services, configuracao) => configuracao
-            .ReadFrom.Configuration(builder.Configuration)
+            .ReadFrom.Configuration(builder.Configuration)   // níveis mínimos vêm do appsettings.json
             .ReadFrom.Services(services)
-            .Enrich.FromLogContext()
+            .Enrich.FromLogContext()                         // inclui propriedades empilhadas (ex.: IdOperacao)
             .Enrich.WithProperty("Aplicacao", nomeAplicacao)
             .WriteTo.Console(
                 outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] [{Aplicacao}] [{IdOperacao}] {Message:lj}{NewLine}{Exception}",
                 theme: AnsiConsoleTheme.Code)
             .WriteTo.File(
                 path: $"logs/{nomeAplicacao}-.txt",
-                rollingInterval: RollingInterval.Day,
-                retainedFileCountLimit: 7,
+                rollingInterval: RollingInterval.Day,   // um arquivo por dia
+                retainedFileCountLimit: 7,              // guarda 7 dias
                 outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{Level:u3}] [{IdOperacao}] [{TraceId}] {SourceContext} {Message:lj}{NewLine}{Exception}")
+            // Logs também vão para o Collector (e dali para o Loki) com TraceId/SpanId.
             .WriteTo.OpenTelemetry(opcoes =>
             {
                 opcoes.Endpoint = endpointOtlp;
@@ -61,9 +62,10 @@ public static class ExtensoesObservabilidade
         app.UseSerilogRequestLogging(opcoes =>
         {
             opcoes.MessageTemplate = "HTTP {RequestMethod} {RequestPath} respondeu {StatusCode} em {Elapsed:0.0} ms";
+            // O nível do log depende do resultado.
             opcoes.GetLevel = (contexto, _, excecao) =>
-                excecao is not null || contexto.Response.StatusCode >= 500 ? LogEventLevel.Error
-                : ExtensoesTelemetria.EhRotaInfraestrutura(contexto.Request.Path) ? LogEventLevel.Verbose
+                excecao is not null || contexto.Response.StatusCode >= 500 ? LogEventLevel.Error            // 5xx vira ERR
+                : ExtensoesTelemetria.EhRotaInfraestrutura(contexto.Request.Path) ? LogEventLevel.Verbose   // /metrics e /saude somem
                 : LogEventLevel.Information;
         });
 

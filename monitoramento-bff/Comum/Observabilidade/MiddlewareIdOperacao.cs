@@ -14,22 +14,23 @@ public class MiddlewareIdOperacao(RequestDelegate proximo)
     /// <summary>Usa o Id recebido no cabeçalho, ou gera um novo se ele vier vazio ou com mais de 64 caracteres.</summary>
     public async Task InvokeAsync(HttpContext contexto)
     {
+        // Reaproveita o id se veio do chamador (outro serviço); senão gera um novo.
         var idOperacao = contexto.Request.Headers[ContextoOperacao.Cabecalho].FirstOrDefault();
         if (string.IsNullOrWhiteSpace(idOperacao) || idOperacao.Length > TamanhoMaximo)
             idOperacao = Guid.NewGuid().ToString("N");
 
-        ContextoOperacao.IdAtual = idOperacao;
+        ContextoOperacao.IdAtual = idOperacao;   // guarda para o resto da requisição
         // Liga o Id de operação ao trace: dá para buscar no Tempo pelo mesmo id que aparece no log e no erro.
         Activity.Current?.SetTag("concessionaria.id_operacao", idOperacao);
         contexto.Response.OnStarting(() =>
         {
-            contexto.Response.Headers[ContextoOperacao.Cabecalho] = idOperacao;
+            contexto.Response.Headers[ContextoOperacao.Cabecalho] = idOperacao;   // devolve na resposta
             return Task.CompletedTask;
         });
 
-        using (LogContext.PushProperty(ContextoOperacao.PropriedadeLog, idOperacao))
+        using (LogContext.PushProperty(ContextoOperacao.PropriedadeLog, idOperacao))   // todo log carrega o id
         {
-            await proximo(contexto);
+            await proximo(contexto);   // segue o pipeline
         }
     }
 }

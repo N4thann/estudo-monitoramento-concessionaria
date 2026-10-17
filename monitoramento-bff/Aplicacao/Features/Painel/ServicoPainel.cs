@@ -15,15 +15,15 @@ public class ServicoPainel(ICarrosApi carrosApi, IMotosApi motosApi)
     /// </summary>
     public async Task<IResult> ObterAsync(CancellationToken ct)
     {
-        var resumoCarrosTask = carrosApi.ObterResumoAsync(ct);
-        var resumoMotosTask = motosApi.ObterResumoAsync(ct);
+        var resumoCarrosTask = carrosApi.ObterResumoAsync(ct);   // chamada 1 (Refit)
+        var resumoMotosTask = motosApi.ObterResumoAsync(ct);     // chamada 2 (Refit), em paralelo
         await Task.WhenAll(resumoCarrosTask, resumoMotosTask);
 
         var respostaCarros = resumoCarrosTask.Result;
         var respostaMotos = resumoMotosTask.Result;
 
         if (!respostaCarros.IsSuccessStatusCode)
-            return ExtensoesRespostaApi.ParaFalha(respostaCarros);
+            return ExtensoesRespostaApi.ParaFalha(respostaCarros);   // 4xx repassa; 5xx vira 502; sem resposta → exceção
         if (!respostaMotos.IsSuccessStatusCode)
             return ExtensoesRespostaApi.ParaFalha(respostaMotos);
 
@@ -31,7 +31,7 @@ public class ServicoPainel(ICarrosApi carrosApi, IMotosApi motosApi)
         var motos = respostaMotos.Content!;
         var temIndicadores = carros.Indicadores is not null && motos.Indicadores is not null;
         if (!temIndicadores)
-            Telemetria.PainelDegradado.Add(1);
+            Telemetria.PainelDegradado.Add(1);   // sintoma visto pela ponta
 
         return Results.Ok(new RespostaPainel(carros, motos, Somar(carros, motos, temIndicadores)));
     }

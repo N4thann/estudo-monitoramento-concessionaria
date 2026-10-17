@@ -32,13 +32,13 @@ public static class ExtensoesInfraestrutura
     /// <c>pipeline_name</c> ("{nome}-standard") nas métricas de resiliência e identifica o destino nos dashboards.
     /// </summary>
     private static void AdicionarCliente<TApi>(IServiceCollection services, string nomeCliente, string urlBase, ConfiguracaoIntegracoes configuracao) where TApi : class =>
-        services.AddRefitGeneratedClient<TApi>(ConfiguracaoRefit, httpClientName: nomeCliente)
-            .ConfigureHttpClient(cliente => cliente.BaseAddress = new Uri(urlBase))
-            .AddHttpMessageHandler<PropagadorIdOperacaoHandler>()
-            .AddStandardResilienceHandler(opcoes =>
+        services.AddRefitGeneratedClient<TApi>(ConfiguracaoRefit, httpClientName: nomeCliente)   // "carros" ou "motos"
+            .ConfigureHttpClient(cliente => cliente.BaseAddress = new Uri(urlBase))              // http://127.0.0.1:5128/ ou :5010/
+            .AddHttpMessageHandler<PropagadorIdOperacaoHandler>()                                // handler 1
+            .AddStandardResilienceHandler(opcoes =>                                              // handler 2
             {
-                opcoes.AttemptTimeout.Timeout = TimeSpan.FromSeconds(configuracao.TimeoutTentativaSegundos);
-                opcoes.TotalRequestTimeout.Timeout = TimeSpan.FromSeconds(configuracao.TimeoutTotalSegundos);
+                opcoes.AttemptTimeout.Timeout = TimeSpan.FromSeconds(configuracao.TimeoutTentativaSegundos);    // 10s por tentativa
+                opcoes.TotalRequestTimeout.Timeout = TimeSpan.FromSeconds(configuracao.TimeoutTotalSegundos);   // 15s no total
                 opcoes.CircuitBreaker.SamplingDuration = TimeSpan.FromSeconds(Math.Max(30, configuracao.TimeoutTentativaSegundos * 2));
                 // Retry só para falha de transporte (conexão recusada, timeout da tentativa). Um 5xx de Carros/Motos
                 // já é o resultado depois dos retries deles contra Relatórios; repetir aqui multiplicaria as tentativas

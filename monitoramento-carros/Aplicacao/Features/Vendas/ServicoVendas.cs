@@ -56,9 +56,9 @@ public class ServicoVendas(IRepositorioCarros repositorioCarros, IRepositorioVen
         await repositorioVendas.InserirAsync(venda, ct);
         logger.LogInformation("Venda {VendaId} registrada para o carro {CarroId} no valor de {Valor}", venda.Id, carro.Id, venda.Valor);
 
-        Telemetria.VendasRegistradas.Add(1, Telemetria.TagTipoVeiculo);
-        Telemetria.ValorVendido.Add((double)venda.Valor, Telemetria.TagTipoVeiculo);
-        Activity.Current?.SetTag("concessionaria.venda_id", venda.Id);
+        Telemetria.VendasRegistradas.Add(1, Telemetria.TagTipoVeiculo);                // +1, rótulo tipo_veiculo="carro"
+        Telemetria.ValorVendido.Add((double)venda.Valor, Telemetria.TagTipoVeiculo);   // soma o valor
+        Activity.Current?.SetTag("concessionaria.venda_id", venda.Id);                 // e marca o span com o id da venda
 
         return RespostaVenda.De(venda);
     }
